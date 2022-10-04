@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B4BAE9328EBC42A005F2B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9228EBC42A005F2B60 /* AppDelegate.swift */; };
+		4B4BAE9728EBC42A005F2B60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9628EBC42A005F2B60 /* ViewController.swift */; };
+		4B4BAE9A28EBC42A005F2B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9828EBC42A005F2B60 /* Main.storyboard */; };
+		4B4BAE9C28EBC42C005F2B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9B28EBC42C005F2B60 /* Assets.xcassets */; };
+		4B4BAE9F28EBC42C005F2B60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9D28EBC42C005F2B60 /* LaunchScreen.storyboard */; };
+		6A5FD004C35E10076109CDBA /* Pods_GrubChaserRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B4BAE8F28EBC42A005F2B60 /* GrubChaserRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrubChaserRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B4BAE9228EBC42A005F2B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4B4BAE9628EBC42A005F2B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4B4BAE9928EBC42A005F2B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B4BAE9B28EBC42C005F2B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B4BAE9E28EBC42C005F2B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B4BAEA028EBC42C005F2B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrubChaserRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9690ECF1CC13B38308FE71B4 /* Pods-GrubChaserRestaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubChaserRestaurant.release.xcconfig"; path = "Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant.release.xcconfig"; sourceTree = "<group>"; };
+		E1A450828824E0F7A63571D5 /* Pods-GrubChaserRestaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubChaserRestaurant.debug.xcconfig"; path = "Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B4BAE8C28EBC42A005F2B60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A5FD004C35E10076109CDBA /* Pods_GrubChaserRestaurant.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A3227CD10C2E2AF027F8ABD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1A450828824E0F7A63571D5 /* Pods-GrubChaserRestaurant.debug.xcconfig */,
+				9690ECF1CC13B38308FE71B4 /* Pods-GrubChaserRestaurant.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4B4BAE8628EBC42A005F2B60 = {
+			isa = PBXGroup;
+			children = (
+				4B4BAE9128EBC42A005F2B60 /* GrubChaserRestaurant */,
+				4B4BAE9028EBC42A005F2B60 /* Products */,
+				2A3227CD10C2E2AF027F8ABD /* Pods */,
+				927859E81644038519B667DE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4B4BAE9028EBC42A005F2B60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BAE8F28EBC42A005F2B60 /* GrubChaserRestaurant.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B4BAE9128EBC42A005F2B60 /* GrubChaserRestaurant */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BAEAA28EBC4E6005F2B60 /* Resources */,
+				4B4BAEAB28EBC4EB005F2B60 /* Models */,
+				4B4BAEAC28EBC547005F2B60 /* Starter */,
+				4B4BAEAD28EBC550005F2B60 /* Router */,
+				4B4BAEA628EBC462005F2B60 /* Service */,
+				4B4BAEA728EBC467005F2B60 /* UI */,
+				4B4BAE9228EBC42A005F2B60 /* AppDelegate.swift */,
+				4B4BAE9D28EBC42C005F2B60 /* LaunchScreen.storyboard */,
+				4B4BAEA028EBC42C005F2B60 /* Info.plist */,
+			);
+			path = GrubChaserRestaurant;
+			sourceTree = "<group>";
+		};
+		4B4BAEA628EBC462005F2B60 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4B4BAEA728EBC467005F2B60 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BAEA828EBC4AD005F2B60 /* Storyboards */,
+				4B4BAEA928EBC4BD005F2B60 /* Login */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4B4BAEA828EBC4AD005F2B60 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BAE9828EBC42A005F2B60 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4B4BAEA928EBC4BD005F2B60 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BAE9628EBC42A005F2B60 /* ViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4B4BAEAA28EBC4E6005F2B60 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BAE9B28EBC42C005F2B60 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4B4BAEAB28EBC4EB005F2B60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4B4BAEAC28EBC547005F2B60 /* Starter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Starter;
+			sourceTree = "<group>";
+		};
+		4B4BAEAD28EBC550005F2B60 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		927859E81644038519B667DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B4BAE8E28EBC42A005F2B60 /* GrubChaserRestaurant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B4BAEA328EBC42C005F2B60 /* Build configuration list for PBXNativeTarget "GrubChaserRestaurant" */;
+			buildPhases = (
+				010C7B120EB996117430AF40 /* [CP] Check Pods Manifest.lock */,
+				4B4BAE8B28EBC42A005F2B60 /* Sources */,
+				4B4BAE8C28EBC42A005F2B60 /* Frameworks */,
+				4B4BAE8D28EBC42A005F2B60 /* Resources */,
+				46A973E1977B4912AB223D59 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrubChaserRestaurant;
+			productName = GrubChaserRestaurant;
+			productReference = 4B4BAE8F28EBC42A005F2B60 /* GrubChaserRestaurant.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B4BAE8728EBC42A005F2B60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					4B4BAE8E28EBC42A005F2B60 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = 4B4BAE8A28EBC42A005F2B60 /* Build configuration list for PBXProject "GrubChaserRestaurant" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4B4BAE8628EBC42A005F2B60;
+			productRefGroup = 4B4BAE9028EBC42A005F2B60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B4BAE8E28EBC42A005F2B60 /* GrubChaserRestaurant */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B4BAE8D28EBC42A005F2B60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B4BAE9F28EBC42C005F2B60 /* LaunchScreen.storyboard in Resources */,
+				4B4BAE9C28EBC42C005F2B60 /* Assets.xcassets in Resources */,
+				4B4BAE9A28EBC42A005F2B60 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		010C7B120EB996117430AF40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GrubChaserRestaurant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46A973E1977B4912AB223D59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B4BAE8B28EBC42A005F2B60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B4BAE9728EBC42A005F2B60 /* ViewController.swift in Sources */,
+				4B4BAE9328EBC42A005F2B60 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4B4BAE9828EBC42A005F2B60 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B4BAE9928EBC42A005F2B60 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4B4BAE9D28EBC42C005F2B60 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B4BAE9E28EBC42C005F2B60 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B4BAEA128EBC42C005F2B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4B4BAEA228EBC42C005F2B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4B4BAEA428EBC42C005F2B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1A450828824E0F7A63571D5 /* Pods-GrubChaserRestaurant.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A6K2NH59J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GrubChaserRestaurant/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.GrubChaserRestaurant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4B4BAEA528EBC42C005F2B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9690ECF1CC13B38308FE71B4 /* Pods-GrubChaserRestaurant.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A6K2NH59J2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GrubChaserRestaurant/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.GrubChaserRestaurant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B4BAE8A28EBC42A005F2B60 /* Build configuration list for PBXProject "GrubChaserRestaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B4BAEA128EBC42C005F2B60 /* Debug */,
+				4B4BAEA228EBC42C005F2B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B4BAEA328EBC42C005F2B60 /* Build configuration list for PBXNativeTarget "GrubChaserRestaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B4BAEA428EBC42C005F2B60 /* Debug */,
+				4B4BAEA528EBC42C005F2B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B4BAE8728EBC42A005F2B60 /* Project object */;
+}

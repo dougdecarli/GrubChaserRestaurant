@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZKR-mO-yIj">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mesas-->
+        <scene sceneID="Xls-py-7CM">
+            <objects>
+                <navigationController id="ZKR-mO-yIj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mesas" image="table-default" id="113-XA-tTU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zb1-B7-rMa">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4hj-pJ-LcQ" kind="relationship" relationship="rootViewController" id="def-q6-EzI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4YE-VM-plY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="441"/>
+        </scene>
+        <!--Mesas-->
+        <scene sceneID="IQ2-Bv-dCU">
+            <objects>
+                <viewController title="Mesas" id="4hj-pJ-LcQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rnt-Eo-g4J">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4IK-A5-OVM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h4W-SW-rDx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJp-8h-Yik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="441"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="table-default" width="21.333333969116211" height="21.333333969116211"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

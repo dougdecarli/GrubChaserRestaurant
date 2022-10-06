@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Jc-1r-4ro">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bem-vindo, Restaurante Parceiro-->
+        <scene sceneID="iTO-an-aA3">
+            <objects>
+                <viewController storyboardIdentifier="loginVC" title="Bem-vindo, Restaurante Parceiro" id="6Jc-1r-4ro" customClass="GBRLoginViewController" customModule="GrubChaserRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MZd-WC-U4O">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faça login como restaurante parceiro!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJD-iD-B8X">
+                                <rect key="frame" x="20" y="57.000000000000007" width="350" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bI-Bq-ScG">
+                                <rect key="frame" x="20" y="87.333333333333329" width="350" height="44.999999999999986"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="aA7-lv-HNM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha - mínimo 4 dígitos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bv7-4x-yHY">
+                                <rect key="frame" x="20" y="142.33333333333334" width="350" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="mMr-XZ-Wej"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-BR-7xr">
+                                <rect key="frame" x="20" y="207.33333333333334" width="350" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.27058823529999998" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="XBe-wb-Zg1"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Entrar">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W5G-NC-ZMi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W5G-NC-ZMi" firstAttribute="trailing" secondItem="4bI-Bq-ScG" secondAttribute="trailing" constant="20" id="2fm-Ci-GBt"/>
+                            <constraint firstItem="DJD-iD-B8X" firstAttribute="leading" secondItem="W5G-NC-ZMi" secondAttribute="leading" constant="20" id="4Nn-Fz-919"/>
+                            <constraint firstItem="s2c-BR-7xr" firstAttribute="leading" secondItem="W5G-NC-ZMi" secondAttribute="leading" constant="20" id="5QD-S6-hxq"/>
+                            <constraint firstItem="bv7-4x-yHY" firstAttribute="leading" secondItem="W5G-NC-ZMi" secondAttribute="leading" constant="20" id="7U6-Ns-rXA"/>
+                            <constraint firstItem="W5G-NC-ZMi" firstAttribute="trailing" secondItem="s2c-BR-7xr" secondAttribute="trailing" constant="20" id="8sq-Ql-ljB"/>
+                            <constraint firstItem="DJD-iD-B8X" firstAttribute="top" secondItem="W5G-NC-ZMi" secondAttribute="top" constant="10" id="Kw7-6t-9O3"/>
+                            <constraint firstItem="bv7-4x-yHY" firstAttribute="top" secondItem="4bI-Bq-ScG" secondAttribute="bottom" constant="10" id="QWg-Cg-8Qq"/>
+                            <constraint firstItem="W5G-NC-ZMi" firstAttribute="trailing" secondItem="bv7-4x-yHY" secondAttribute="trailing" constant="20" id="QcF-HG-B7S"/>
+                            <constraint firstItem="s2c-BR-7xr" firstAttribute="top" secondItem="bv7-4x-yHY" secondAttribute="bottom" constant="20" id="Qx5-Dm-URS"/>
+                            <constraint firstItem="W5G-NC-ZMi" firstAttribute="trailing" secondItem="DJD-iD-B8X" secondAttribute="trailing" constant="20" id="VKe-v2-9ME"/>
+                            <constraint firstItem="4bI-Bq-ScG" firstAttribute="top" secondItem="DJD-iD-B8X" secondAttribute="bottom" constant="10" id="keR-0O-sEr"/>
+                            <constraint firstItem="4bI-Bq-ScG" firstAttribute="leading" secondItem="W5G-NC-ZMi" secondAttribute="leading" constant="20" id="rIq-3T-1dR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Conecte-se conosco" largeTitleDisplayMode="always" id="74L-OP-oZe"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="4bI-Bq-ScG" id="vx6-IL-I2w"/>
+                        <outlet property="loginButton" destination="s2c-BR-7xr" id="4Rk-1g-ZLH"/>
+                        <outlet property="passwordTextField" destination="bv7-4x-yHY" id="W5n-sY-RyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c0P-jO-T4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-486.95652173913049" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

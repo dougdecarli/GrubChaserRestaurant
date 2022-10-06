@@ -8,21 +8,107 @@
 
 /* Begin PBXBuildFile section */
 		4B4BAE9328EBC42A005F2B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9228EBC42A005F2B60 /* AppDelegate.swift */; };
-		4B4BAE9728EBC42A005F2B60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9628EBC42A005F2B60 /* ViewController.swift */; };
 		4B4BAE9A28EBC42A005F2B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9828EBC42A005F2B60 /* Main.storyboard */; };
 		4B4BAE9C28EBC42C005F2B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9B28EBC42C005F2B60 /* Assets.xcassets */; };
 		4B4BAE9F28EBC42C005F2B60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9D28EBC42C005F2B60 /* LaunchScreen.storyboard */; };
+		4B66885028ECAC71006F5C84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B66884F28ECAC71006F5C84 /* GoogleService-Info.plist */; };
+		4B66885228ECAC8D006F5C84 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885128ECAC8D006F5C84 /* ColorPallete.swift */; };
+		4B66885428ECACB4006F5C84 /* Starter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885328ECACB4006F5C84 /* Starter.swift */; };
+		4B66886E28ECACE3006F5C84 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885628ECACE3006F5C84 /* EncodableExtension.swift */; };
+		4B66886F28ECACE3006F5C84 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885728ECACE3006F5C84 /* UserDefaultsExtensions.swift */; };
+		4B66887028ECACE3006F5C84 /* UIView+centerY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885928ECACE3006F5C84 /* UIView+centerY.swift */; };
+		4B66887128ECACE3006F5C84 /* UIView+centerX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885A28ECACE3006F5C84 /* UIView+centerX.swift */; };
+		4B66887228ECACE3006F5C84 /* UIView+bottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885B28ECACE3006F5C84 /* UIView+bottom.swift */; };
+		4B66887328ECACE3006F5C84 /* UIView+height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885C28ECACE3006F5C84 /* UIView+height.swift */; };
+		4B66887428ECACE3006F5C84 /* UIView+trailing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885D28ECACE3006F5C84 /* UIView+trailing.swift */; };
+		4B66887528ECACE3006F5C84 /* UIView+top.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885E28ECACE3006F5C84 /* UIView+top.swift */; };
+		4B66887628ECACE3006F5C84 /* UIView+add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66885F28ECACE3006F5C84 /* UIView+add.swift */; };
+		4B66887728ECACE3006F5C84 /* UIView+leading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886028ECACE3006F5C84 /* UIView+leading.swift */; };
+		4B66887828ECACE3006F5C84 /* UIView+width.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886128ECACE3006F5C84 /* UIView+width.swift */; };
+		4B66887928ECACE3006F5C84 /* UIView+padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886228ECACE3006F5C84 /* UIView+padding.swift */; };
+		4B66887A28ECACE3006F5C84 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886328ECACE3006F5C84 /* StringExtensions.swift */; };
+		4B66887B28ECACE3006F5C84 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886428ECACE3006F5C84 /* DoubleExtensions.swift */; };
+		4B66887C28ECACE3006F5C84 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886528ECACE3006F5C84 /* UIViewExtensions.swift */; };
+		4B66887D28ECACE3006F5C84 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886628ECACE3006F5C84 /* UIImageViewExtensions.swift */; };
+		4B66887E28ECACE3006F5C84 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886728ECACE3006F5C84 /* DateExtension.swift */; };
+		4B66887F28ECACE3006F5C84 /* Reactive+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886928ECACE3006F5C84 /* Reactive+UIViewController.swift */; };
+		4B66888028ECACE3006F5C84 /* Reactive+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886A28ECACE3006F5C84 /* Reactive+UICollectionViewCell.swift */; };
+		4B66888128ECACE3006F5C84 /* Reactive+UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886B28ECACE3006F5C84 /* Reactive+UITableViewCell.swift */; };
+		4B66888228ECACE3006F5C84 /* Reactive+FirestoreQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886C28ECACE3006F5C84 /* Reactive+FirestoreQuery.swift */; };
+		4B66888328ECACE3006F5C84 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66886D28ECACE3006F5C84 /* UIButton+Rx.swift */; };
+		4B66888528ECAD36006F5C84 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66888428ECAD36006F5C84 /* LoginRouter.swift */; };
+		4B66888828ECAD7F006F5C84 /* LoginRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66888728ECAD7E006F5C84 /* LoginRouterProtocol.swift */; };
+		4B66888A28ECAEA1006F5C84 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B66888928ECAEA1006F5C84 /* Login.storyboard */; };
+		4B66888C28ECAF4E006F5C84 /* GBRLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66888B28ECAF4E006F5C84 /* GBRLoginViewModel.swift */; };
+		4B66888E28ECAF5B006F5C84 /* GBRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66888D28ECAF5B006F5C84 /* GBRLoginViewController.swift */; };
+		4B66889928ECAF90006F5C84 /* GrubChaserBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66889128ECAF90006F5C84 /* GrubChaserBaseViewModel.swift */; };
+		4B66889A28ECAF90006F5C84 /* GrubChaserBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66889228ECAF90006F5C84 /* GrubChaserBaseViewController.swift */; };
+		4B66889B28ECAF90006F5C84 /* GrubChaserAlertableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66889428ECAF90006F5C84 /* GrubChaserAlertableViewModel.swift */; };
+		4B66889C28ECAF90006F5C84 /* GrubChaserViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66889528ECAF90006F5C84 /* GrubChaserViewModelProtocol.swift */; };
+		4B66889D28ECAF90006F5C84 /* GrubChaserLoadableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66889628ECAF90006F5C84 /* GrubChaserLoadableViewModel.swift */; };
+		4B66889E28ECAF90006F5C84 /* GrubChaserViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66889728ECAF90006F5C84 /* GrubChaserViewControllerProtocol.swift */; };
+		4B66889F28ECAF90006F5C84 /* GrubChaserUIAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66889828ECAF90006F5C84 /* GrubChaserUIAlertView.swift */; };
+		4B6688A128ECB020006F5C84 /* GBRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6688A028ECB020006F5C84 /* GBRService.swift */; };
+		4B6688A328ECB04D006F5C84 /* GBRServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6688A228ECB04D006F5C84 /* GBRServiceProtocol.swift */; };
+		4B6688A528ECB458006F5C84 /* GBRRestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6688A428ECB458006F5C84 /* GBRRestaurantModel.swift */; };
+		4B6688A728ECC801006F5C84 /* GBRRestaurantLoggedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6688A628ECC801006F5C84 /* GBRRestaurantLoggedModel.swift */; };
+		4B6688A928ECC881006F5C84 /* GBRLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6688A828ECC881006F5C84 /* GBRLoginModel.swift */; };
+		4B6688AC28EE4A72006F5C84 /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6688AB28EE4A72006F5C84 /* Orders.storyboard */; };
+		4B6688B028EE4A9B006F5C84 /* Tables.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6688AF28EE4A9B006F5C84 /* Tables.storyboard */; };
 		6A5FD004C35E10076109CDBA /* Pods_GrubChaserRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B4BAE8F28EBC42A005F2B60 /* GrubChaserRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrubChaserRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4BAE9228EBC42A005F2B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B4BAE9628EBC42A005F2B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B4BAE9928EBC42A005F2B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B4BAE9B28EBC42C005F2B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B4BAE9E28EBC42C005F2B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B4BAEA028EBC42C005F2B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B66884F28ECAC71006F5C84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B66885128ECAC8D006F5C84 /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
+		4B66885328ECACB4006F5C84 /* Starter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starter.swift; sourceTree = "<group>"; };
+		4B66885628ECACE3006F5C84 /* EncodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		4B66885728ECACE3006F5C84 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		4B66885928ECACE3006F5C84 /* UIView+centerY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+centerY.swift"; sourceTree = "<group>"; };
+		4B66885A28ECACE3006F5C84 /* UIView+centerX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+centerX.swift"; sourceTree = "<group>"; };
+		4B66885B28ECACE3006F5C84 /* UIView+bottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+bottom.swift"; sourceTree = "<group>"; };
+		4B66885C28ECACE3006F5C84 /* UIView+height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+height.swift"; sourceTree = "<group>"; };
+		4B66885D28ECACE3006F5C84 /* UIView+trailing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+trailing.swift"; sourceTree = "<group>"; };
+		4B66885E28ECACE3006F5C84 /* UIView+top.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+top.swift"; sourceTree = "<group>"; };
+		4B66885F28ECACE3006F5C84 /* UIView+add.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+add.swift"; sourceTree = "<group>"; };
+		4B66886028ECACE3006F5C84 /* UIView+leading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+leading.swift"; sourceTree = "<group>"; };
+		4B66886128ECACE3006F5C84 /* UIView+width.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+width.swift"; sourceTree = "<group>"; };
+		4B66886228ECACE3006F5C84 /* UIView+padding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+padding.swift"; sourceTree = "<group>"; };
+		4B66886328ECACE3006F5C84 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		4B66886428ECACE3006F5C84 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		4B66886528ECACE3006F5C84 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		4B66886628ECACE3006F5C84 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		4B66886728ECACE3006F5C84 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		4B66886928ECACE3006F5C84 /* Reactive+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIViewController.swift"; sourceTree = "<group>"; };
+		4B66886A28ECACE3006F5C84 /* Reactive+UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UICollectionViewCell.swift"; sourceTree = "<group>"; };
+		4B66886B28ECACE3006F5C84 /* Reactive+UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UITableViewCell.swift"; sourceTree = "<group>"; };
+		4B66886C28ECACE3006F5C84 /* Reactive+FirestoreQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+FirestoreQuery.swift"; sourceTree = "<group>"; };
+		4B66886D28ECACE3006F5C84 /* UIButton+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
+		4B66888428ECAD36006F5C84 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		4B66888728ECAD7E006F5C84 /* LoginRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouterProtocol.swift; sourceTree = "<group>"; };
+		4B66888928ECAEA1006F5C84 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		4B66888B28ECAF4E006F5C84 /* GBRLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRLoginViewModel.swift; sourceTree = "<group>"; };
+		4B66888D28ECAF5B006F5C84 /* GBRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRLoginViewController.swift; sourceTree = "<group>"; };
+		4B66889128ECAF90006F5C84 /* GrubChaserBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrubChaserBaseViewModel.swift; sourceTree = "<group>"; };
+		4B66889228ECAF90006F5C84 /* GrubChaserBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrubChaserBaseViewController.swift; sourceTree = "<group>"; };
+		4B66889428ECAF90006F5C84 /* GrubChaserAlertableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrubChaserAlertableViewModel.swift; sourceTree = "<group>"; };
+		4B66889528ECAF90006F5C84 /* GrubChaserViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrubChaserViewModelProtocol.swift; sourceTree = "<group>"; };
+		4B66889628ECAF90006F5C84 /* GrubChaserLoadableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrubChaserLoadableViewModel.swift; sourceTree = "<group>"; };
+		4B66889728ECAF90006F5C84 /* GrubChaserViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrubChaserViewControllerProtocol.swift; sourceTree = "<group>"; };
+		4B66889828ECAF90006F5C84 /* GrubChaserUIAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrubChaserUIAlertView.swift; sourceTree = "<group>"; };
+		4B6688A028ECB020006F5C84 /* GBRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRService.swift; sourceTree = "<group>"; };
+		4B6688A228ECB04D006F5C84 /* GBRServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRServiceProtocol.swift; sourceTree = "<group>"; };
+		4B6688A428ECB458006F5C84 /* GBRRestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRRestaurantModel.swift; sourceTree = "<group>"; };
+		4B6688A628ECC801006F5C84 /* GBRRestaurantLoggedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRRestaurantLoggedModel.swift; sourceTree = "<group>"; };
+		4B6688A828ECC881006F5C84 /* GBRLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRLoginModel.swift; sourceTree = "<group>"; };
+		4B6688AB28EE4A72006F5C84 /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
+		4B6688AF28EE4A9B006F5C84 /* Tables.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tables.storyboard; sourceTree = "<group>"; };
 		731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrubChaserRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9690ECF1CC13B38308FE71B4 /* Pods-GrubChaserRestaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubChaserRestaurant.release.xcconfig"; path = "Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant.release.xcconfig"; sourceTree = "<group>"; };
 		E1A450828824E0F7A63571D5 /* Pods-GrubChaserRestaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubChaserRestaurant.debug.xcconfig"; path = "Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -46,7 +132,6 @@
 				E1A450828824E0F7A63571D5 /* Pods-GrubChaserRestaurant.debug.xcconfig */,
 				9690ECF1CC13B38308FE71B4 /* Pods-GrubChaserRestaurant.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -72,12 +157,14 @@
 			isa = PBXGroup;
 			children = (
 				4B4BAEAA28EBC4E6005F2B60 /* Resources */,
+				4B66885528ECACE3006F5C84 /* Extensions */,
+				4B66888F28ECAF90006F5C84 /* Components */,
 				4B4BAEAB28EBC4EB005F2B60 /* Models */,
-				4B4BAEAC28EBC547005F2B60 /* Starter */,
 				4B4BAEAD28EBC550005F2B60 /* Router */,
 				4B4BAEA628EBC462005F2B60 /* Service */,
 				4B4BAEA728EBC467005F2B60 /* UI */,
 				4B4BAE9228EBC42A005F2B60 /* AppDelegate.swift */,
+				4B66884F28ECAC71006F5C84 /* GoogleService-Info.plist */,
 				4B4BAE9D28EBC42C005F2B60 /* LaunchScreen.storyboard */,
 				4B4BAEA028EBC42C005F2B60 /* Info.plist */,
 			);
@@ -87,6 +174,8 @@
 		4B4BAEA628EBC462005F2B60 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4B6688A028ECB020006F5C84 /* GBRService.swift */,
+				4B6688A228ECB04D006F5C84 /* GBRServiceProtocol.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -94,24 +183,20 @@
 		4B4BAEA728EBC467005F2B60 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4B4BAEA828EBC4AD005F2B60 /* Storyboards */,
 				4B4BAEA928EBC4BD005F2B60 /* Login */,
+				4B6688AA28EE4A25006F5C84 /* Main Tab */,
+				4B6688AD28EE4A76006F5C84 /* Orders */,
+				4B6688AE28EE4A82006F5C84 /* Tables */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		4B4BAEA828EBC4AD005F2B60 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				4B4BAE9828EBC42A005F2B60 /* Main.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		4B4BAEA928EBC4BD005F2B60 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				4B4BAE9628EBC42A005F2B60 /* ViewController.swift */,
+				4B66888928ECAEA1006F5C84 /* Login.storyboard */,
+				4B66888D28ECAF5B006F5C84 /* GBRLoginViewController.swift */,
+				4B66888B28ECAF4E006F5C84 /* GBRLoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -120,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				4B4BAE9B28EBC42C005F2B60 /* Assets.xcassets */,
+				4B66885128ECAC8D006F5C84 /* ColorPallete.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -127,6 +213,9 @@
 		4B4BAEAB28EBC4EB005F2B60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4B6688A428ECB458006F5C84 /* GBRRestaurantModel.swift */,
+				4B6688A628ECC801006F5C84 /* GBRRestaurantLoggedModel.swift */,
+				4B6688A828ECC881006F5C84 /* GBRLoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +223,7 @@
 		4B4BAEAC28EBC547005F2B60 /* Starter */ = {
 			isa = PBXGroup;
 			children = (
+				4B66885328ECACB4006F5C84 /* Starter.swift */,
 			);
 			path = Starter;
 			sourceTree = "<group>";
@@ -141,8 +231,118 @@
 		4B4BAEAD28EBC550005F2B60 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4B66888628ECAD4F006F5C84 /* LoginRouter */,
+				4B4BAEAC28EBC547005F2B60 /* Starter */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		4B66885528ECACE3006F5C84 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B66885628ECACE3006F5C84 /* EncodableExtension.swift */,
+				4B66885728ECACE3006F5C84 /* UserDefaultsExtensions.swift */,
+				4B66885828ECACE3006F5C84 /* UIKit+Constraints */,
+				4B66886328ECACE3006F5C84 /* StringExtensions.swift */,
+				4B66886428ECACE3006F5C84 /* DoubleExtensions.swift */,
+				4B66886528ECACE3006F5C84 /* UIViewExtensions.swift */,
+				4B66886628ECACE3006F5C84 /* UIImageViewExtensions.swift */,
+				4B66886728ECACE3006F5C84 /* DateExtension.swift */,
+				4B66886828ECACE3006F5C84 /* Rx */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B66885828ECACE3006F5C84 /* UIKit+Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				4B66885928ECACE3006F5C84 /* UIView+centerY.swift */,
+				4B66885A28ECACE3006F5C84 /* UIView+centerX.swift */,
+				4B66885B28ECACE3006F5C84 /* UIView+bottom.swift */,
+				4B66885C28ECACE3006F5C84 /* UIView+height.swift */,
+				4B66885D28ECACE3006F5C84 /* UIView+trailing.swift */,
+				4B66885E28ECACE3006F5C84 /* UIView+top.swift */,
+				4B66885F28ECACE3006F5C84 /* UIView+add.swift */,
+				4B66886028ECACE3006F5C84 /* UIView+leading.swift */,
+				4B66886128ECACE3006F5C84 /* UIView+width.swift */,
+				4B66886228ECACE3006F5C84 /* UIView+padding.swift */,
+			);
+			path = "UIKit+Constraints";
+			sourceTree = "<group>";
+		};
+		4B66886828ECACE3006F5C84 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				4B66886928ECACE3006F5C84 /* Reactive+UIViewController.swift */,
+				4B66886A28ECACE3006F5C84 /* Reactive+UICollectionViewCell.swift */,
+				4B66886B28ECACE3006F5C84 /* Reactive+UITableViewCell.swift */,
+				4B66886C28ECACE3006F5C84 /* Reactive+FirestoreQuery.swift */,
+				4B66886D28ECACE3006F5C84 /* UIButton+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		4B66888628ECAD4F006F5C84 /* LoginRouter */ = {
+			isa = PBXGroup;
+			children = (
+				4B66888428ECAD36006F5C84 /* LoginRouter.swift */,
+				4B66888728ECAD7E006F5C84 /* LoginRouterProtocol.swift */,
+			);
+			path = LoginRouter;
+			sourceTree = "<group>";
+		};
+		4B66888F28ECAF90006F5C84 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4B66889028ECAF90006F5C84 /* Base Components */,
+				4B66889828ECAF90006F5C84 /* GrubChaserUIAlertView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4B66889028ECAF90006F5C84 /* Base Components */ = {
+			isa = PBXGroup;
+			children = (
+				4B66889128ECAF90006F5C84 /* GrubChaserBaseViewModel.swift */,
+				4B66889228ECAF90006F5C84 /* GrubChaserBaseViewController.swift */,
+				4B66889328ECAF90006F5C84 /* Protocols */,
+			);
+			path = "Base Components";
+			sourceTree = "<group>";
+		};
+		4B66889328ECAF90006F5C84 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4B66889428ECAF90006F5C84 /* GrubChaserAlertableViewModel.swift */,
+				4B66889528ECAF90006F5C84 /* GrubChaserViewModelProtocol.swift */,
+				4B66889628ECAF90006F5C84 /* GrubChaserLoadableViewModel.swift */,
+				4B66889728ECAF90006F5C84 /* GrubChaserViewControllerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4B6688AA28EE4A25006F5C84 /* Main Tab */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BAE9828EBC42A005F2B60 /* Main.storyboard */,
+			);
+			path = "Main Tab";
+			sourceTree = "<group>";
+		};
+		4B6688AD28EE4A76006F5C84 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				4B6688AB28EE4A72006F5C84 /* Orders.storyboard */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		4B6688AE28EE4A82006F5C84 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				4B6688AF28EE4A9B006F5C84 /* Tables.storyboard */,
+			);
+			path = Tables;
 			sourceTree = "<group>";
 		};
 		927859E81644038519B667DE /* Frameworks */ = {
@@ -213,8 +413,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B6688B028EE4A9B006F5C84 /* Tables.storyboard in Resources */,
 				4B4BAE9F28EBC42C005F2B60 /* LaunchScreen.storyboard in Resources */,
+				4B6688AC28EE4A72006F5C84 /* Orders.storyboard in Resources */,
+				4B66885028ECAC71006F5C84 /* GoogleService-Info.plist in Resources */,
 				4B4BAE9C28EBC42C005F2B60 /* Assets.xcassets in Resources */,
+				4B66888A28ECAEA1006F5C84 /* Login.storyboard in Resources */,
 				4B4BAE9A28EBC42A005F2B60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,8 +472,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4BAE9728EBC42A005F2B60 /* ViewController.swift in Sources */,
+				4B6688A528ECB458006F5C84 /* GBRRestaurantModel.swift in Sources */,
+				4B6688A928ECC881006F5C84 /* GBRLoginModel.swift in Sources */,
+				4B66885228ECAC8D006F5C84 /* ColorPallete.swift in Sources */,
+				4B66887E28ECACE3006F5C84 /* DateExtension.swift in Sources */,
+				4B66887328ECACE3006F5C84 /* UIView+height.swift in Sources */,
+				4B66887628ECACE3006F5C84 /* UIView+add.swift in Sources */,
+				4B66889C28ECAF90006F5C84 /* GrubChaserViewModelProtocol.swift in Sources */,
+				4B66888C28ECAF4E006F5C84 /* GBRLoginViewModel.swift in Sources */,
+				4B66885428ECACB4006F5C84 /* Starter.swift in Sources */,
+				4B66887B28ECACE3006F5C84 /* DoubleExtensions.swift in Sources */,
+				4B66889E28ECAF90006F5C84 /* GrubChaserViewControllerProtocol.swift in Sources */,
+				4B66886F28ECACE3006F5C84 /* UserDefaultsExtensions.swift in Sources */,
+				4B66888028ECACE3006F5C84 /* Reactive+UICollectionViewCell.swift in Sources */,
+				4B66888128ECACE3006F5C84 /* Reactive+UITableViewCell.swift in Sources */,
+				4B66887828ECACE3006F5C84 /* UIView+width.swift in Sources */,
+				4B6688A328ECB04D006F5C84 /* GBRServiceProtocol.swift in Sources */,
+				4B6688A728ECC801006F5C84 /* GBRRestaurantLoggedModel.swift in Sources */,
+				4B66887F28ECACE3006F5C84 /* Reactive+UIViewController.swift in Sources */,
+				4B66888828ECAD7F006F5C84 /* LoginRouterProtocol.swift in Sources */,
+				4B66887128ECACE3006F5C84 /* UIView+centerX.swift in Sources */,
+				4B66887428ECACE3006F5C84 /* UIView+trailing.swift in Sources */,
+				4B66888528ECAD36006F5C84 /* LoginRouter.swift in Sources */,
+				4B66889A28ECAF90006F5C84 /* GrubChaserBaseViewController.swift in Sources */,
+				4B66888228ECACE3006F5C84 /* Reactive+FirestoreQuery.swift in Sources */,
+				4B66888E28ECAF5B006F5C84 /* GBRLoginViewController.swift in Sources */,
+				4B66887C28ECACE3006F5C84 /* UIViewExtensions.swift in Sources */,
+				4B66889B28ECAF90006F5C84 /* GrubChaserAlertableViewModel.swift in Sources */,
+				4B66887028ECACE3006F5C84 /* UIView+centerY.swift in Sources */,
+				4B66887928ECACE3006F5C84 /* UIView+padding.swift in Sources */,
+				4B66889D28ECAF90006F5C84 /* GrubChaserLoadableViewModel.swift in Sources */,
+				4B66889F28ECAF90006F5C84 /* GrubChaserUIAlertView.swift in Sources */,
+				4B66886E28ECACE3006F5C84 /* EncodableExtension.swift in Sources */,
+				4B66888328ECACE3006F5C84 /* UIButton+Rx.swift in Sources */,
+				4B66887228ECACE3006F5C84 /* UIView+bottom.swift in Sources */,
+				4B66889928ECAF90006F5C84 /* GrubChaserBaseViewModel.swift in Sources */,
+				4B66887728ECACE3006F5C84 /* UIView+leading.swift in Sources */,
+				4B6688A128ECB020006F5C84 /* GBRService.swift in Sources */,
+				4B66887528ECACE3006F5C84 /* UIView+top.swift in Sources */,
 				4B4BAE9328EBC42A005F2B60 /* AppDelegate.swift in Sources */,
+				4B66887D28ECACE3006F5C84 /* UIImageViewExtensions.swift in Sources */,
+				4B66887A28ECACE3006F5C84 /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,4 +31,25 @@ class GBRService: GBRServiceProtocol {
             .getFirstDocument()
             .decodeDocument(GBRRestaurantModel.self)
     }
+    
+    func getNewOrders() -> Observable<[GBROrderModel]> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .order(by: "timestamp", descending: true)
+            .rx
+            .getDocuments()
+            .decode(GBROrderModel.self)
+    }
+    
+    func listenToNewOrders() -> Observable<Void> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .rx
+            .listen()
+            .map { _ in }
+    }
 }

@@ -55,6 +55,14 @@
 		4B6688A928ECC881006F5C84 /* GBRLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6688A828ECC881006F5C84 /* GBRLoginModel.swift */; };
 		4B6688AC28EE4A72006F5C84 /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6688AB28EE4A72006F5C84 /* Orders.storyboard */; };
 		4B6688B028EE4A9B006F5C84 /* Tables.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6688AF28EE4A9B006F5C84 /* Tables.storyboard */; };
+		4BE67F0728EF25370082F6FC /* GBROrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F0628EF25370082F6FC /* GBROrdersViewModel.swift */; };
+		4BE67F0928EF25420082F6FC /* GBROrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F0828EF25420082F6FC /* GBROrdersViewController.swift */; };
+		4BE67F0C28EF25680082F6FC /* GBROrderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F0B28EF25680082F6FC /* GBROrderRouter.swift */; };
+		4BE67F0E28EF259D0082F6FC /* GBROrdersRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F0D28EF259D0082F6FC /* GBROrdersRouterProtocol.swift */; };
+		4BE67F1228EF26C00082F6FC /* GBROrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F1028EF26C00082F6FC /* GBROrdersTableViewCell.swift */; };
+		4BE67F1328EF26C00082F6FC /* GBROrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE67F1128EF26C00082F6FC /* GBROrdersTableViewCell.xib */; };
+		4BE67F1728EF4BFB0082F6FC /* GBROrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F1628EF4BFB0082F6FC /* GBROrderModel.swift */; };
+		4BE67F1928EF4C2D0082F6FC /* GBRProductBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F1828EF4C2D0082F6FC /* GBRProductBag.swift */; };
 		6A5FD004C35E10076109CDBA /* Pods_GrubChaserRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +117,14 @@
 		4B6688A828ECC881006F5C84 /* GBRLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRLoginModel.swift; sourceTree = "<group>"; };
 		4B6688AB28EE4A72006F5C84 /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
 		4B6688AF28EE4A9B006F5C84 /* Tables.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tables.storyboard; sourceTree = "<group>"; };
+		4BE67F0628EF25370082F6FC /* GBROrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBROrdersViewModel.swift; sourceTree = "<group>"; };
+		4BE67F0828EF25420082F6FC /* GBROrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBROrdersViewController.swift; sourceTree = "<group>"; };
+		4BE67F0B28EF25680082F6FC /* GBROrderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBROrderRouter.swift; sourceTree = "<group>"; };
+		4BE67F0D28EF259D0082F6FC /* GBROrdersRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBROrdersRouterProtocol.swift; sourceTree = "<group>"; };
+		4BE67F1028EF26C00082F6FC /* GBROrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBROrdersTableViewCell.swift; sourceTree = "<group>"; };
+		4BE67F1128EF26C00082F6FC /* GBROrdersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GBROrdersTableViewCell.xib; sourceTree = "<group>"; };
+		4BE67F1628EF4BFB0082F6FC /* GBROrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBROrderModel.swift; sourceTree = "<group>"; };
+		4BE67F1828EF4C2D0082F6FC /* GBRProductBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRProductBag.swift; sourceTree = "<group>"; };
 		731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrubChaserRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9690ECF1CC13B38308FE71B4 /* Pods-GrubChaserRestaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubChaserRestaurant.release.xcconfig"; path = "Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant.release.xcconfig"; sourceTree = "<group>"; };
 		E1A450828824E0F7A63571D5 /* Pods-GrubChaserRestaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubChaserRestaurant.debug.xcconfig"; path = "Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,9 +210,8 @@
 		4B4BAEA928EBC4BD005F2B60 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				4BE67F1A28EF7DEC0082F6FC /* Sign In */,
 				4B66888928ECAEA1006F5C84 /* Login.storyboard */,
-				4B66888D28ECAF5B006F5C84 /* GBRLoginViewController.swift */,
-				4B66888B28ECAF4E006F5C84 /* GBRLoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -216,6 +231,8 @@
 				4B6688A428ECB458006F5C84 /* GBRRestaurantModel.swift */,
 				4B6688A628ECC801006F5C84 /* GBRRestaurantLoggedModel.swift */,
 				4B6688A828ECC881006F5C84 /* GBRLoginModel.swift */,
+				4BE67F1628EF4BFB0082F6FC /* GBROrderModel.swift */,
+				4BE67F1828EF4C2D0082F6FC /* GBRProductBag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +248,7 @@
 		4B4BAEAD28EBC550005F2B60 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4BE67F0A28EF255C0082F6FC /* Orders */,
 				4B66888628ECAD4F006F5C84 /* LoginRouter */,
 				4B4BAEAC28EBC547005F2B60 /* Starter */,
 			);
@@ -332,7 +350,10 @@
 		4B6688AD28EE4A76006F5C84 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				4BE67F0F28EF26A30082F6FC /* Cells */,
 				4B6688AB28EE4A72006F5C84 /* Orders.storyboard */,
+				4BE67F0828EF25420082F6FC /* GBROrdersViewController.swift */,
+				4BE67F0628EF25370082F6FC /* GBROrdersViewModel.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -343,6 +364,33 @@
 				4B6688AF28EE4A9B006F5C84 /* Tables.storyboard */,
 			);
 			path = Tables;
+			sourceTree = "<group>";
+		};
+		4BE67F0A28EF255C0082F6FC /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				4BE67F0B28EF25680082F6FC /* GBROrderRouter.swift */,
+				4BE67F0D28EF259D0082F6FC /* GBROrdersRouterProtocol.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		4BE67F0F28EF26A30082F6FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4BE67F1028EF26C00082F6FC /* GBROrdersTableViewCell.swift */,
+				4BE67F1128EF26C00082F6FC /* GBROrdersTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4BE67F1A28EF7DEC0082F6FC /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				4B66888D28ECAF5B006F5C84 /* GBRLoginViewController.swift */,
+				4B66888B28ECAF4E006F5C84 /* GBRLoginViewModel.swift */,
+			);
+			path = "Sign In";
 			sourceTree = "<group>";
 		};
 		927859E81644038519B667DE /* Frameworks */ = {
@@ -413,6 +461,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE67F1328EF26C00082F6FC /* GBROrdersTableViewCell.xib in Resources */,
 				4B6688B028EE4A9B006F5C84 /* Tables.storyboard in Resources */,
 				4B4BAE9F28EBC42C005F2B60 /* LaunchScreen.storyboard in Resources */,
 				4B6688AC28EE4A72006F5C84 /* Orders.storyboard in Resources */,
@@ -476,9 +525,11 @@
 				4B6688A928ECC881006F5C84 /* GBRLoginModel.swift in Sources */,
 				4B66885228ECAC8D006F5C84 /* ColorPallete.swift in Sources */,
 				4B66887E28ECACE3006F5C84 /* DateExtension.swift in Sources */,
+				4BE67F1928EF4C2D0082F6FC /* GBRProductBag.swift in Sources */,
 				4B66887328ECACE3006F5C84 /* UIView+height.swift in Sources */,
 				4B66887628ECACE3006F5C84 /* UIView+add.swift in Sources */,
 				4B66889C28ECAF90006F5C84 /* GrubChaserViewModelProtocol.swift in Sources */,
+				4BE67F0C28EF25680082F6FC /* GBROrderRouter.swift in Sources */,
 				4B66888C28ECAF4E006F5C84 /* GBRLoginViewModel.swift in Sources */,
 				4B66885428ECACB4006F5C84 /* Starter.swift in Sources */,
 				4B66887B28ECACE3006F5C84 /* DoubleExtensions.swift in Sources */,
@@ -491,6 +542,7 @@
 				4B6688A728ECC801006F5C84 /* GBRRestaurantLoggedModel.swift in Sources */,
 				4B66887F28ECACE3006F5C84 /* Reactive+UIViewController.swift in Sources */,
 				4B66888828ECAD7F006F5C84 /* LoginRouterProtocol.swift in Sources */,
+				4BE67F0928EF25420082F6FC /* GBROrdersViewController.swift in Sources */,
 				4B66887128ECACE3006F5C84 /* UIView+centerX.swift in Sources */,
 				4B66887428ECACE3006F5C84 /* UIView+trailing.swift in Sources */,
 				4B66888528ECAD36006F5C84 /* LoginRouter.swift in Sources */,
@@ -500,10 +552,13 @@
 				4B66887C28ECACE3006F5C84 /* UIViewExtensions.swift in Sources */,
 				4B66889B28ECAF90006F5C84 /* GrubChaserAlertableViewModel.swift in Sources */,
 				4B66887028ECACE3006F5C84 /* UIView+centerY.swift in Sources */,
+				4BE67F1728EF4BFB0082F6FC /* GBROrderModel.swift in Sources */,
 				4B66887928ECACE3006F5C84 /* UIView+padding.swift in Sources */,
+				4BE67F0728EF25370082F6FC /* GBROrdersViewModel.swift in Sources */,
 				4B66889D28ECAF90006F5C84 /* GrubChaserLoadableViewModel.swift in Sources */,
 				4B66889F28ECAF90006F5C84 /* GrubChaserUIAlertView.swift in Sources */,
 				4B66886E28ECACE3006F5C84 /* EncodableExtension.swift in Sources */,
+				4BE67F0E28EF259D0082F6FC /* GBROrdersRouterProtocol.swift in Sources */,
 				4B66888328ECACE3006F5C84 /* UIButton+Rx.swift in Sources */,
 				4B66887228ECACE3006F5C84 /* UIView+bottom.swift in Sources */,
 				4B66889928ECAF90006F5C84 /* GrubChaserBaseViewModel.swift in Sources */,
@@ -512,6 +567,7 @@
 				4B66887528ECACE3006F5C84 /* UIView+top.swift in Sources */,
 				4B4BAE9328EBC42A005F2B60 /* AppDelegate.swift in Sources */,
 				4B66887D28ECACE3006F5C84 /* UIImageViewExtensions.swift in Sources */,
+				4BE67F1228EF26C00082F6FC /* GBROrdersTableViewCell.swift in Sources */,
 				4B66887A28ECACE3006F5C84 /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

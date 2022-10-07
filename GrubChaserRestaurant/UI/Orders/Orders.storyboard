@@ -29,14 +29,30 @@
         <!--Pedidos-->
         <scene sceneID="Ls6-8z-Rae">
             <objects>
-                <viewController title="Pedidos" id="KwG-6v-i18" sceneMemberID="viewController">
+                <viewController title="Pedidos" id="KwG-6v-i18" customClass="GBROrdersViewController" customModule="GrubChaserRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ey-M1-prd">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gHq-EU-Ys6">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" red="0.93333333330000001" green="0.41568627450000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qGp-rk-EUU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qGp-rk-EUU" firstAttribute="bottom" secondItem="gHq-EU-Ys6" secondAttribute="bottom" id="No8-YJ-TqG"/>
+                            <constraint firstItem="qGp-rk-EUU" firstAttribute="trailing" secondItem="gHq-EU-Ys6" secondAttribute="trailing" id="XFU-ac-NKq"/>
+                            <constraint firstItem="gHq-EU-Ys6" firstAttribute="top" secondItem="qGp-rk-EUU" secondAttribute="top" id="dRk-jC-7jJ"/>
+                            <constraint firstItem="gHq-EU-Ys6" firstAttribute="leading" secondItem="qGp-rk-EUU" secondAttribute="leading" id="lCl-u4-WJj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="raa-8F-beI"/>
+                    <connections>
+                        <outlet property="newOrdersTableView" destination="gHq-EU-Ys6" id="QCv-7F-Zpv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBX-at-l3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

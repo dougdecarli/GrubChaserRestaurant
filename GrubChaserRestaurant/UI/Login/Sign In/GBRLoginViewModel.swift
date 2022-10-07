@@ -91,7 +91,7 @@ class GBRLoginViewModel: GrubChaserBaseViewModel<LoginRouterProtocol> {
             .disposed(by: disposeBag)
     }
     
-    private func getRestaurant(from id: String) {
+    private func getRestaurant(from uid: String) {
         func handleSuccess(restaurant: GBRRestaurantModel) {
             stopLoading()
             saveRestaurantLogged(restaurant: restaurant)
@@ -103,7 +103,7 @@ class GBRLoginViewModel: GrubChaserBaseViewModel<LoginRouterProtocol> {
             showErrorOnLoginAlertView()
         }
         
-        service.getRestaurant(with: id)
+        service.getRestaurant(with: uid)
             .subscribe(onNext: handleSuccess,
                        onError: handleError)
             .disposed(by: disposeBag)

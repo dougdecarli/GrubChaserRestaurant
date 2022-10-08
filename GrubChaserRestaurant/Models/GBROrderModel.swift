@@ -6,8 +6,22 @@
 //
 
 import Foundation
+import Differentiator
 
-struct GBROrderModel: Codable {
+struct GBROrderModel: Codable, IdentifiableType, Equatable {
+    static func == (lhs: GBROrderModel, rhs: GBROrderModel) -> Bool {
+        if lhs.orderId == rhs.orderId {
+            return true
+        }
+        return false
+    }
+    
+    var identity: UUID {
+        return UUID()
+    }
+    typealias Identity = UUID
+    
+    let orderId: String
     let userId: String
     let userName: String
     let tableId: String

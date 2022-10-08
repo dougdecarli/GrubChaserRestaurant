@@ -18,11 +18,13 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
     
     private let newOrders = BehaviorRelay<[GBROrderModel]>(value: [])
     
-    let onViewWillAppear = PublishRelay<Void>()
+    let onViewWillAppear = PublishRelay<Void>(),
+        onConfirmButtonTouched = PublishRelay<GBROrderModel>()
     
     override func setupBindings() {
         super.setupBindings()
         setupOnViewWillAppear()
+        setupOnConfirmButtonTouched()
         observeNewOrdersAddition()
     }
     
@@ -34,7 +36,12 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
             .disposed(by: disposeBag)
     }
     
-    //MARK: Outputs
+    private func setupOnConfirmButtonTouched() {
+        onConfirmButtonTouched
+            .do(onNext: startLoading)
+            .subscribe(onNext: postOrderConfirmed)
+            .disposed(by: disposeBag)
+    }
     
     //MARK: Service
     private func getRestaurantNewOrders() {
@@ -43,13 +50,33 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
             newOrders.accept(orders)
         }
         
-        func handleError(_: Error) {
+        func handleError(error: Error) {
             stopLoading()
+            if error is DecodableErrorType {
+                newOrders.accept([])
+                return
+            }
             showAlert.onNext(getAlertErrorModel())
         }
         
         service.getNewOrders()
             .subscribe(onNext: handleSuccess(_:),
+                       onError: handleError)
+            .disposed(by: disposeBag)
+    }
+    
+    private func postOrderConfirmed(order: GBROrderModel) {
+        func handleSuccess() {
+            stopLoading()
+        }
+        
+        func handleError(_: Error) {
+            stopLoading()
+            showAlert.onNext(getAlertConfirmOrderErrorModel())
+        }
+        
+        service.postOrderConfirmed(orderId: order.orderId)
+            .subscribe(onNext: handleSuccess,
                        onError: handleError)
             .disposed(by: disposeBag)
     }
@@ -64,6 +91,18 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
     private func getAlertErrorModel() -> ShowAlertModel {
         .init(title: "Não foi possível buscar pedidos",
               message: "Tente novamente",
+              viewControllerRef: viewControllerRef)
+    }
+    
+    private func getAlertConfirmOrderErrorModel() -> ShowAlertModel {
+        .init(title: "Não foi confirmar o pedido",
+              message: "Tente novamente",
+              viewControllerRef: viewControllerRef)
+    }
+    
+    private func getAlertEmptyOrdersErrorModel() -> ShowAlertModel {
+        .init(title: "Nenhum pedido novo para confirmar!",
+              message: "",
               viewControllerRef: viewControllerRef)
     }
     

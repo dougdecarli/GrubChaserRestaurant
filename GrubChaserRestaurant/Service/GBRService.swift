@@ -38,6 +38,7 @@ class GBRService: GBRServiceProtocol {
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
             .collection("orders")
             .order(by: "timestamp", descending: true)
+            .whereField("status", isEqualTo: "AGUARDANDO CONFIRMAÇÃO")
             .rx
             .getDocuments()
             .decode(GBROrderModel.self)
@@ -51,5 +52,15 @@ class GBRService: GBRServiceProtocol {
             .rx
             .listen()
             .map { _ in }
+    }
+    
+    func postOrderConfirmed(orderId: String) -> Observable<Void> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .document(orderId)
+            .rx
+            .updateData(["status": "CONFIRMADO"])
     }
 }

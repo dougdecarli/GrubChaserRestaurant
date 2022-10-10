@@ -16,5 +16,11 @@ class GBROrderRouter: GBROrdersRouterProtocol {
         self.navigationController = navigationController
     }
     
-    
+    func presentOrderVc(order: GBROrderModel) {
+        let vc = ordersStoryboard.instantiateViewController(withIdentifier: "orderDetailVC") as! GBROrderDetailViewController
+        vc.viewModel = GBROrderDetailViewModel(router: self,
+                                               viewControllerRef: vc,
+                                               order: order)
+        navigationController.present(vc, animated: true)
+    }
 }

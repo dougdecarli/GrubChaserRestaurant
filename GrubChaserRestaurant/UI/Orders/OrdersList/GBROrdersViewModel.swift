@@ -19,12 +19,14 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
     private let newOrders = BehaviorRelay<[GBROrderModel]>(value: [])
     
     let onViewWillAppear = PublishRelay<Void>(),
-        onConfirmButtonTouched = PublishRelay<GBROrderModel>()
+        onConfirmButtonTouched = PublishRelay<GBROrderModel>(),
+        onOrderTouched = PublishRelay<GBROrderModel>()
     
     override func setupBindings() {
         super.setupBindings()
         setupOnViewWillAppear()
         setupOnConfirmButtonTouched()
+        setupOnOrderTouched()
         observeNewOrdersAddition()
     }
     
@@ -40,6 +42,12 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
         onConfirmButtonTouched
             .do(onNext: startLoading)
             .subscribe(onNext: postOrderConfirmed)
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupOnOrderTouched() {
+        onOrderTouched
+            .subscribe(onNext: router.presentOrderVc)
             .disposed(by: disposeBag)
     }
     

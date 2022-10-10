@@ -8,5 +8,5 @@
 import Foundation
 
 protocol GBROrdersRouterProtocol {
-    
+    func presentOrderVc(order: GBROrderModel)
 }

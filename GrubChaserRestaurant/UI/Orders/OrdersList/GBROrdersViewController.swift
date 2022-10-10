@@ -45,19 +45,16 @@ class GBROrdersViewController: GrubChaserBaseViewController<GBROrdersViewModel> 
     
     override func bindInputs() {
         super.bindInputs()
+        
+        newOrdersTableView
+            .rx
+            .modelSelected(GBROrderModel.self)
+            .bind(to: viewModel.onOrderTouched)
+            .disposed(by: disposeBag)
     }
     
     override func bindOutputs() {
         super.bindOutputs()
-        
-//        viewModel
-//            .newOrdersCells
-//            .bind(to: newOrdersTableView.rx.items(cellIdentifier: GBROrdersTableViewCell.identifier,
-//                                                  cellType: GBROrdersTableViewCell.self)) {
-//                (row, element, cell) in
-//                cell.bind(order: element)
-//            }.disposed(by: disposeBag)
-        
         viewModel
             .newOrdersCells
             .map { items -> [OrdersSectionModel] in

@@ -32,6 +32,7 @@ class GBRService: GBRServiceProtocol {
             .decodeDocument(GBRRestaurantModel.self)
     }
     
+    //MARK: - Orders
     func getNewOrders() -> Observable<[GBROrderModel]> {
         dbFirestore
             .collection("restaurants")
@@ -62,5 +63,16 @@ class GBRService: GBRServiceProtocol {
             .document(orderId)
             .rx
             .updateData(["status": "CONFIRMADO"])
+    }
+    
+    //MARK: - Tables
+    func getTables() -> Observable<[GBRTableModel]> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("tables")
+            .rx
+            .getDocuments()
+            .decode(GBRTableModel.self)
     }
 }

@@ -206,8 +206,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 5 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
+    /// Image `check`.
+    static let check = Rswift.ImageResource(bundle: R.hostingBundle, name: "check")
+    /// Image `client`.
+    static let client = Rswift.ImageResource(bundle: R.hostingBundle, name: "client")
     /// Image `generic-food`.
     static let genericFood = Rswift.ImageResource(bundle: R.hostingBundle, name: "generic-food")
     /// Image `generic-logo`.
@@ -218,6 +222,20 @@ struct R: Rswift.Validatable {
     static let order = Rswift.ImageResource(bundle: R.hostingBundle, name: "order")
     /// Image `table-default`.
     static let tableDefault = Rswift.ImageResource(bundle: R.hostingBundle, name: "table-default")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "check", bundle: ..., traitCollection: ...)`
+    static func check(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.check, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "client", bundle: ..., traitCollection: ...)`
+    static func client(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.client, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "generic-food", bundle: ..., traitCollection: ...)`
@@ -269,12 +287,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `GBROrderProductsTableViewCell`.
     static let gbrOrderProductsTableViewCell = _R.nib._GBROrderProductsTableViewCell()
     /// Nib `GBROrdersTableViewCell`.
     static let gbrOrdersTableViewCell = _R.nib._GBROrdersTableViewCell()
+    /// Nib `GBRTablesCollectionViewCell`.
+    static let gbrTablesCollectionViewCell = _R.nib._GBRTablesCollectionViewCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "GBROrderProductsTableViewCell", in: bundle)`
@@ -292,12 +312,24 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GBRTablesCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gbrTablesCollectionViewCell) instead")
+    static func gbrTablesCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gbrTablesCollectionViewCell)
+    }
+    #endif
+
     static func gbrOrderProductsTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBROrderProductsTableViewCell? {
       return R.nib.gbrOrderProductsTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBROrderProductsTableViewCell
     }
 
     static func gbrOrdersTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBROrdersTableViewCell? {
       return R.nib.gbrOrdersTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBROrdersTableViewCell
+    }
+
+    static func gbrTablesCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBRTablesCollectionViewCell? {
+      return R.nib.gbrTablesCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBRTablesCollectionViewCell
     }
 
     fileprivate init() {}
@@ -342,6 +374,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBROrdersTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBROrdersTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GBRTablesCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GBRTablesCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBRTablesCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBRTablesCollectionViewCell
       }
 
       fileprivate init() {}

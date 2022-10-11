@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B4B300928F49BB7000B4176 /* GBRTablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B300828F49BB7000B4176 /* GBRTablesViewController.swift */; };
+		4B4B300B28F49BF4000B4176 /* GBRTablesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B300A28F49BF4000B4176 /* GBRTablesViewModel.swift */; };
+		4B4B300E28F49C12000B4176 /* GBRTablesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B300D28F49C12000B4176 /* GBRTablesRouter.swift */; };
+		4B4B301028F49C1C000B4176 /* GBRTablesRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B300F28F49C1C000B4176 /* GBRTablesRouterProtocol.swift */; };
+		4B4B301428F49DFC000B4176 /* GBRTablesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B301228F49DFC000B4176 /* GBRTablesCollectionViewCell.swift */; };
+		4B4B301528F49DFC000B4176 /* GBRTablesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4B301328F49DFC000B4176 /* GBRTablesCollectionViewCell.xib */; };
+		4B4B301728F4A28F000B4176 /* GBRTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B301628F4A28F000B4176 /* GBRTableModel.swift */; };
+		4B4B301928F4D335000B4176 /* GBRUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B301828F4D335000B4176 /* GBRUserModel.swift */; };
 		4B4BAE9328EBC42A005F2B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9228EBC42A005F2B60 /* AppDelegate.swift */; };
 		4B4BAE9A28EBC42A005F2B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9828EBC42A005F2B60 /* Main.storyboard */; };
 		4B4BAE9C28EBC42C005F2B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BAE9B28EBC42C005F2B60 /* Assets.xcassets */; };
@@ -73,6 +81,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B4B300828F49BB7000B4176 /* GBRTablesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTablesViewController.swift; sourceTree = "<group>"; };
+		4B4B300A28F49BF4000B4176 /* GBRTablesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTablesViewModel.swift; sourceTree = "<group>"; };
+		4B4B300D28F49C12000B4176 /* GBRTablesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTablesRouter.swift; sourceTree = "<group>"; };
+		4B4B300F28F49C1C000B4176 /* GBRTablesRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTablesRouterProtocol.swift; sourceTree = "<group>"; };
+		4B4B301228F49DFC000B4176 /* GBRTablesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTablesCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B4B301328F49DFC000B4176 /* GBRTablesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GBRTablesCollectionViewCell.xib; sourceTree = "<group>"; };
+		4B4B301628F4A28F000B4176 /* GBRTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTableModel.swift; sourceTree = "<group>"; };
+		4B4B301828F4D335000B4176 /* GBRUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRUserModel.swift; sourceTree = "<group>"; };
 		4B4BAE8F28EBC42A005F2B60 /* GrubChaserRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrubChaserRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4BAE9228EBC42A005F2B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4BAE9928EBC42A005F2B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +179,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4B4B300C28F49C05000B4176 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				4B4B300D28F49C12000B4176 /* GBRTablesRouter.swift */,
+				4B4B300F28F49C1C000B4176 /* GBRTablesRouterProtocol.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		4B4B301128F49DC3000B4176 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4B4B301228F49DFC000B4176 /* GBRTablesCollectionViewCell.swift */,
+				4B4B301328F49DFC000B4176 /* GBRTablesCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4B4BAE8628EBC42A005F2B60 = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +281,8 @@
 				4B6688A828ECC881006F5C84 /* GBRLoginModel.swift */,
 				4BE67F1628EF4BFB0082F6FC /* GBROrderModel.swift */,
 				4BE67F1828EF4C2D0082F6FC /* GBRProductBag.swift */,
+				4B4B301628F4A28F000B4176 /* GBRTableModel.swift */,
+				4B4B301828F4D335000B4176 /* GBRUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +298,7 @@
 		4B4BAEAD28EBC550005F2B60 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4B4B300C28F49C05000B4176 /* Tables */,
 				4BE67F0A28EF255C0082F6FC /* Orders */,
 				4B66888628ECAD4F006F5C84 /* LoginRouter */,
 				4B4BAEAC28EBC547005F2B60 /* Starter */,
@@ -374,7 +411,10 @@
 		4B6688AE28EE4A82006F5C84 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
+				4B4B301128F49DC3000B4176 /* Cells */,
 				4B6688AF28EE4A9B006F5C84 /* Tables.storyboard */,
+				4B4B300828F49BB7000B4176 /* GBRTablesViewController.swift */,
+				4B4B300A28F49BF4000B4176 /* GBRTablesViewModel.swift */,
 			);
 			path = Tables;
 			sourceTree = "<group>";
@@ -515,6 +555,7 @@
 				4BE67F1328EF26C00082F6FC /* GBROrdersTableViewCell.xib in Resources */,
 				4B6688B028EE4A9B006F5C84 /* Tables.storyboard in Resources */,
 				4B4BAE9F28EBC42C005F2B60 /* LaunchScreen.storyboard in Resources */,
+				4B4B301528F49DFC000B4176 /* GBRTablesCollectionViewCell.xib in Resources */,
 				4B6688AC28EE4A72006F5C84 /* Orders.storyboard in Resources */,
 				4BE67F3C28F3834F0082F6FC /* GBROrderProductsTableViewCell.xib in Resources */,
 				4B66885028ECAC71006F5C84 /* GoogleService-Info.plist in Resources */,
@@ -596,6 +637,7 @@
 			files = (
 				4B6688A528ECB458006F5C84 /* GBRRestaurantModel.swift in Sources */,
 				4B6688A928ECC881006F5C84 /* GBRLoginModel.swift in Sources */,
+				4B4B300E28F49C12000B4176 /* GBRTablesRouter.swift in Sources */,
 				4B66885228ECAC8D006F5C84 /* ColorPallete.swift in Sources */,
 				4B66887E28ECACE3006F5C84 /* DateExtension.swift in Sources */,
 				4BE67F1928EF4C2D0082F6FC /* GBRProductBag.swift in Sources */,
@@ -617,6 +659,7 @@
 				4B6688A328ECB04D006F5C84 /* GBRServiceProtocol.swift in Sources */,
 				4B6688A728ECC801006F5C84 /* GBRRestaurantLoggedModel.swift in Sources */,
 				4B66887F28ECACE3006F5C84 /* Reactive+UIViewController.swift in Sources */,
+				4B4B300928F49BB7000B4176 /* GBRTablesViewController.swift in Sources */,
 				4B66888828ECAD7F006F5C84 /* LoginRouterProtocol.swift in Sources */,
 				4BE67F0928EF25420082F6FC /* GBROrdersViewController.swift in Sources */,
 				4B66887128ECACE3006F5C84 /* UIView+centerX.swift in Sources */,
@@ -625,8 +668,11 @@
 				4B66889A28ECAF90006F5C84 /* GrubChaserBaseViewController.swift in Sources */,
 				4B66888228ECACE3006F5C84 /* Reactive+FirestoreQuery.swift in Sources */,
 				4B66888E28ECAF5B006F5C84 /* GBRLoginViewController.swift in Sources */,
+				4B4B301028F49C1C000B4176 /* GBRTablesRouterProtocol.swift in Sources */,
 				4B66887C28ECACE3006F5C84 /* UIViewExtensions.swift in Sources */,
+				4B4B300B28F49BF4000B4176 /* GBRTablesViewModel.swift in Sources */,
 				4B66889B28ECAF90006F5C84 /* GrubChaserAlertableViewModel.swift in Sources */,
+				4B4B301428F49DFC000B4176 /* GBRTablesCollectionViewCell.swift in Sources */,
 				4B66887028ECACE3006F5C84 /* UIView+centerY.swift in Sources */,
 				4BE67F1728EF4BFB0082F6FC /* GBROrderModel.swift in Sources */,
 				4BE67F3B28F3834F0082F6FC /* GBROrderProductsTableViewCell.swift in Sources */,
@@ -638,9 +684,11 @@
 				4BE67F0E28EF259D0082F6FC /* GBROrdersRouterProtocol.swift in Sources */,
 				4B66888328ECACE3006F5C84 /* UIButton+Rx.swift in Sources */,
 				4B66887228ECACE3006F5C84 /* UIView+bottom.swift in Sources */,
+				4B4B301928F4D335000B4176 /* GBRUserModel.swift in Sources */,
 				4B66889928ECAF90006F5C84 /* GrubChaserBaseViewModel.swift in Sources */,
 				4B66887728ECACE3006F5C84 /* UIView+leading.swift in Sources */,
 				4B6688A128ECB020006F5C84 /* GBRService.swift in Sources */,
+				4B4B301728F4A28F000B4176 /* GBRTableModel.swift in Sources */,
 				4B66887528ECACE3006F5C84 /* UIView+top.swift in Sources */,
 				4B4BAE9328EBC42A005F2B60 /* AppDelegate.swift in Sources */,
 				4B66887D28ECACE3006F5C84 /* UIImageViewExtensions.swift in Sources */,

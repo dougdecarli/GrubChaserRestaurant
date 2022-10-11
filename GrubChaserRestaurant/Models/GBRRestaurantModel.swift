@@ -49,8 +49,4 @@ struct GrubChaserProductCategory: Codable {
     let image: String
 }
 
-struct GrubChaserTable: Codable {
-    let id: String
-    let code: String
-    let isOccupied: Bool
-}
+

@@ -39,6 +39,12 @@ class GBRTablesViewController: GrubChaserBaseViewController<GBRTablesViewModel> 
     
     override func bindInputs() {
         super.bindInputs()
+        
+        tablesCollectionView
+            .rx
+            .modelSelected(GBRTableModel.self)
+            .bind(to: viewModel.onTableTouched)
+            .disposed(by: disposeBag)
     }
     
     override func bindOutputs() {

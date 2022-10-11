@@ -9,14 +9,18 @@ import UIKit
 
 class GBRTablesRouter: GBRTablesRouterProtocol {
     private let navigationController: UINavigationController,
-                ordersStoryboard = UIStoryboard(name: "Tables",
+                tablesStoryboard = UIStoryboard(name: "Tables",
                                                 bundle: nil)
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func presentTableVc(order: GBRTableModel) {
-        
+    func presentTableClients(table: GBRTableModel) {
+        let vc = tablesStoryboard.instantiateViewController(withIdentifier: "clientsTableVC") as! GBRTableClientsViewController
+        vc.viewModel = GBRTableClientsViewModel(table: table,
+                                                router: self,
+                                                viewControllerRef: vc)
+        navigationController.present(vc, animated: true)
     }
 }

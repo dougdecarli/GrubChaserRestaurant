@@ -8,5 +8,5 @@
 import Foundation
 
 protocol GBRTablesRouterProtocol {
-    func presentTableVc(order: GBRTableModel)
+    func presentTableClients(table: GBRTableModel)
 }

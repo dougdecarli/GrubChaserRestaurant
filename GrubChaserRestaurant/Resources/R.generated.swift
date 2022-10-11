@@ -206,12 +206,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
     /// Image `check`.
     static let check = Rswift.ImageResource(bundle: R.hostingBundle, name: "check")
-    /// Image `client`.
-    static let client = Rswift.ImageResource(bundle: R.hostingBundle, name: "client")
     /// Image `generic-food`.
     static let genericFood = Rswift.ImageResource(bundle: R.hostingBundle, name: "generic-food")
     /// Image `generic-logo`.
@@ -222,18 +220,15 @@ struct R: Rswift.Validatable {
     static let order = Rswift.ImageResource(bundle: R.hostingBundle, name: "order")
     /// Image `table-default`.
     static let tableDefault = Rswift.ImageResource(bundle: R.hostingBundle, name: "table-default")
+    /// Image `user-background`.
+    static let userBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "user-background")
+    /// Image `user`.
+    static let user = Rswift.ImageResource(bundle: R.hostingBundle, name: "user")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "check", bundle: ..., traitCollection: ...)`
     static func check(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.check, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "client", bundle: ..., traitCollection: ...)`
-    static func client(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.client, compatibleWith: traitCollection)
     }
     #endif
 
@@ -272,6 +267,20 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "user", bundle: ..., traitCollection: ...)`
+    static func user(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.user, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "user-background", bundle: ..., traitCollection: ...)`
+    static func userBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.userBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
@@ -287,12 +296,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `GBROrderProductsTableViewCell`.
     static let gbrOrderProductsTableViewCell = _R.nib._GBROrderProductsTableViewCell()
     /// Nib `GBROrdersTableViewCell`.
     static let gbrOrdersTableViewCell = _R.nib._GBROrdersTableViewCell()
+    /// Nib `GBRTableClientTableViewCell`.
+    static let gbrTableClientTableViewCell = _R.nib._GBRTableClientTableViewCell()
     /// Nib `GBRTablesCollectionViewCell`.
     static let gbrTablesCollectionViewCell = _R.nib._GBRTablesCollectionViewCell()
 
@@ -313,6 +324,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GBRTableClientTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gbrTableClientTableViewCell) instead")
+    static func gbrTableClientTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gbrTableClientTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "GBRTablesCollectionViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.gbrTablesCollectionViewCell) instead")
     static func gbrTablesCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -326,6 +345,10 @@ struct R: Rswift.Validatable {
 
     static func gbrOrdersTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBROrdersTableViewCell? {
       return R.nib.gbrOrdersTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBROrdersTableViewCell
+    }
+
+    static func gbrTableClientTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBRTableClientTableViewCell? {
+      return R.nib.gbrTableClientTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBRTableClientTableViewCell
     }
 
     static func gbrTablesCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBRTablesCollectionViewCell? {
@@ -351,12 +374,19 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _GBRTableClientTableViewCell.validate()
+    }
+
     struct _GBROrderProductsTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "GBROrderProductsTableViewCell"
@@ -374,6 +404,23 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBROrdersTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBROrdersTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GBRTableClientTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "GBRTableClientTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBRTableClientTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBRTableClientTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "user-background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user-background' is used in nib 'GBRTableClientTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -503,12 +550,18 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let clientsTableVC = StoryboardViewControllerResource<GBRTableClientsViewController>(identifier: "clientsTableVC")
       let name = "Tables"
+
+      func clientsTableVC(_: Void = ()) -> GBRTableClientsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: clientsTableVC)
+      }
 
       static func validate() throws {
         if UIKit.UIImage(named: "table-default", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'table-default' is used in storyboard 'Tables', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.tables().clientsTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'clientsTableVC' could not be loaded from storyboard 'Tables' as 'GBRTableClientsViewController'.") }
       }
 
       fileprivate init() {}

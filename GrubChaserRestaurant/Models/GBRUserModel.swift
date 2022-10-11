@@ -6,8 +6,21 @@
 //
 
 import Foundation
+import Differentiator
 
-struct GBRUserModel: Codable {
+struct GBRUserModel: Codable, Equatable, IdentifiableType {
+    static func == (lhs: GBRUserModel, rhs: GBRUserModel) -> Bool {
+        if lhs.uid == rhs.uid {
+            return true
+        }
+        return false
+    }
+    
+    var identity: UUID {
+        return UUID()
+    }
+    typealias Identity = UUID
+    
     let uid: String
     let name: String
 }

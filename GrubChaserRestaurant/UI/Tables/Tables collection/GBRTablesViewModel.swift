@@ -16,13 +16,15 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
     var showAlert = PublishSubject<ShowAlertModel>(),
         isLoaderShowing = PublishSubject<Bool>()
     
-    let onViewWillAppear = PublishRelay<Void>()
+    let onViewWillAppear = PublishRelay<Void>(),
+        onTableTouched = PublishRelay<GBRTableModel>()
     
     private let tables = BehaviorRelay<[GBRTableModel]>(value: [])
     
     override func setupBindings() {
         super.setupBindings()
         setupOnViewWillAppear()
+        setupOnTableTouched()
     }
     
     //MARK: - Inputs
@@ -33,7 +35,11 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
             .disposed(by: disposeBag)
     }
     
-    //MARK: - Outputs
+    private func setupOnTableTouched() {
+        onTableTouched
+            .subscribe(onNext: presentClientsTable)
+            .disposed(by: disposeBag)
+    }
     
     //MARK: - Service
     private func getRestaurantTables() {
@@ -50,6 +56,21 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
             .subscribe(onNext: handleSuccess(tables:),
                        onError: handleError(_:))
             .disposed(by: disposeBag)
+    }
+    
+    //MARK: - Navigation
+    private func presentClientsTable(table: GBRTableModel) {
+        guard let _ = table.clients?.count else {
+            showAlert.onNext(getAlertConfirmOrderErrorModel(tableName: table.name))
+            return
+        }
+        router.presentTableClients(table: table)
+    }
+    
+    private func getAlertConfirmOrderErrorModel(tableName: String) -> ShowAlertModel {
+        .init(title: "\(tableName) ainda não possui pedidos",
+              message: "",
+              viewControllerRef: viewControllerRef)
     }
 }
 

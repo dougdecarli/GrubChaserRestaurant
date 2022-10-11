@@ -74,6 +74,62 @@
             </objects>
             <point key="canvasLocation" x="748" y="441"/>
         </scene>
+        <!--Table Clients View Controller-->
+        <scene sceneID="noY-3V-Dtb">
+            <objects>
+                <viewController storyboardIdentifier="clientsTableVC" id="rrt-Wv-O2g" customClass="GBRTableClientsViewController" customModule="GrubChaserRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AOM-Nz-7ke">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlN-N1-swC">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="108"/>
+                                <items>
+                                    <navigationItem title="Pedido" largeTitleDisplayMode="always" id="vuf-Jg-9gf"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hle-BD-FXQ">
+                                <rect key="frame" x="0.0" y="108" width="390" height="679"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5VA-IC-Wya">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5VA-IC-Wya" id="abt-QE-i6M">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qZX-uG-koU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vlN-N1-swC" firstAttribute="top" secondItem="AOM-Nz-7ke" secondAttribute="top" id="JAH-Rj-PC3"/>
+                            <constraint firstItem="Hle-BD-FXQ" firstAttribute="leading" secondItem="qZX-uG-koU" secondAttribute="leading" id="TEs-57-pfW"/>
+                            <constraint firstItem="qZX-uG-koU" firstAttribute="bottom" secondItem="Hle-BD-FXQ" secondAttribute="bottom" id="U0I-e6-k16"/>
+                            <constraint firstItem="Hle-BD-FXQ" firstAttribute="trailing" secondItem="qZX-uG-koU" secondAttribute="trailing" id="W1d-ZD-UWe"/>
+                            <constraint firstItem="vlN-N1-swC" firstAttribute="leading" secondItem="AOM-Nz-7ke" secondAttribute="leading" id="aPi-oM-ekB"/>
+                            <constraint firstAttribute="trailing" secondItem="vlN-N1-swC" secondAttribute="trailing" id="bhT-mB-7V5"/>
+                            <constraint firstItem="Hle-BD-FXQ" firstAttribute="top" secondItem="vlN-N1-swC" secondAttribute="bottom" id="lPo-ZQ-nr9"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="systemBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="clientsTableView" destination="Hle-BD-FXQ" id="4ce-kj-Aim"/>
+                        <outlet property="navigationBar" destination="vlN-N1-swC" id="Ecg-7g-Lzd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfu-GG-UrI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1618" y="441"/>
+        </scene>
     </scenes>
     <resources>
         <image name="table-default" width="21.333333969116211" height="21.333333969116211"/>

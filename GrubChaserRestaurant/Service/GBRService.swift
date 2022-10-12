@@ -71,6 +71,7 @@ class GBRService: GBRServiceProtocol {
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
             .collection("tables")
+            .order(by: "clients", descending: true)
             .rx
             .getDocuments()
             .decode(GBRTableModel.self)

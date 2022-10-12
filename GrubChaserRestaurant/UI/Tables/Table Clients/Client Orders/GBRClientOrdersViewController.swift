@@ -9,12 +9,13 @@ import UIKit
 import RxSwift
 import RxDataSources
 
+typealias ClientsOrderSectionModel = SectionModel<String, GBRProductBag>
+typealias ClientsOrderTableViewDataSource = RxTableViewSectionedReloadDataSource<ClientsOrderSectionModel>
+
 class GBRClientOrdersViewController: GrubChaserBaseViewController<GBRClientOrdersViewModel> {
     @IBOutlet weak var clientOrdersTableView: UITableView!
-
-    typealias ClientsOrderSectionModel = AnimatableSectionModel<String, GBRProductBag>
-    typealias ClientsOrderTableViewDataSource = RxTableViewSectionedAnimatedDataSource<ClientsOrderSectionModel>
-    lazy var dataSource = ClientsOrderTableViewDataSource(animationConfiguration: .init(insertAnimation: .automatic), configureCell: { [weak self] (dataSource, tableView, indexPath, item) in
+    
+    lazy var dataSource = ClientsOrderTableViewDataSource(configureCell: { [weak self] (dataSource, tableView, indexPath, item) in
         guard let self = self else { return UITableViewCell() }
         if let cell = tableView.dequeueReusableCell(withIdentifier: GBROrderProductsTableViewCell.identifier,
                                                     for: indexPath) as? GBROrderProductsTableViewCell {
@@ -24,11 +25,13 @@ class GBRClientOrdersViewController: GrubChaserBaseViewController<GBRClientOrder
         else {
             return UITableViewCell()
         }
+    }, titleForHeaderInSection: { dataSource, indexPath in
+        return dataSource[indexPath].model
     })
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        definesPresentationContext = true
+        title = "Pedidos de \(viewModel.client.name.split(separator: " ").first!)"
         setupTableView()
         bind()
     }
@@ -47,14 +50,14 @@ class GBRClientOrdersViewController: GrubChaserBaseViewController<GBRClientOrder
         
         viewModel
             .clientOrdersCells
-            .map { items -> [ClientsOrderSectionModel] in
-                return [ClientsOrderSectionModel(model: "", items: items)]
-            }
+            .startWith([])
             .bind(to: clientOrdersTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
     
     private func setupTableView() {
-        clientOrdersTableView.register(UINib(nibName: GBROrderProductsTableViewCell.nibName, bundle: .main), forCellReuseIdentifier: GBROrderProductsTableViewCell.identifier)
+        clientOrdersTableView.register(UINib(nibName: GBROrderProductsTableViewCell.nibName,
+                                             bundle: .main),
+                                       forCellReuseIdentifier: GBROrderProductsTableViewCell.identifier)
     }
 }

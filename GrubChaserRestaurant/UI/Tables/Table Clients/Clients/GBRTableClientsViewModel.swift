@@ -41,9 +41,8 @@ class GBRTableClientsViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
     
     //MARK: - Navigation
     private func presentClientOrders(client: GBRUserModel) {
-        router.presentClientOrders(table: table,
-                                   client: client,
-                                   clientsTableVc: viewControllerRef as! GBRTableClientsViewController)
+        router.goToClientOrders(table: table,
+                                client: client)
     }
 }
- 
+

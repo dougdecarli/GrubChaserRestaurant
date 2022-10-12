@@ -10,16 +10,17 @@ import RxSwift
 import RxCocoa
 
 class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
-    var clientOrdersCells: Observable<[GBRProductBag]> {
+    var clientOrdersCells: Observable<[ClientsOrderSectionModel]> {
         orderProductsBag.asObservable()
     }
     
     var showAlert = PublishSubject<ShowAlertModel>(),
-        isLoaderShowing = PublishSubject<Bool>()
+        isLoaderShowing = PublishSubject<Bool>(),
+        totalPrice = BehaviorRelay<Double>(value: 0)
     
     let client: GBRUserModel,
         table: GBRTableModel,
-        orderProductsBag = PublishRelay<[GBRProductBag]>(),
+        orderProductsBag = BehaviorRelay<[ClientsOrderSectionModel]>(value: []),
         onViewWillAppear = PublishRelay<Void>()
     
     init(table: GBRTableModel,
@@ -49,17 +50,26 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
     private func getClientOrders() {
         func handleSuccess(orders: [GBROrderModel]) {
             stopLoader()
-            var productsBag: [GBRProductBag] = []
+            orderProductsBag.accept([])
+            totalPrice.accept(0)
             orders.forEach { order in
-                order.products.forEach { products in
-                    productsBag.append(products)
+                orderProductsBag.accept(orderProductsBag.value +
+                                         [.init(model: "\(Date.getDateFormatter(timestamp: order.timestamp)) - \(order.status.rawValue)",
+                                                items: order.products)])
+                var price: Double = 0
+                order.products.forEach { productBag in
+                    price += productBag.product.price * Double(productBag.quantity)
                 }
+                totalPrice.accept(totalPrice.value + price)
             }
-            orderProductsBag.accept(productsBag)
         }
         
-        func handleError(_: Error) {
+        func handleError(error: Error) {
             stopLoader()
+            if error is DecodableErrorType {
+                showAlert.onNext(getAlertEmptyErrorModel())
+                return
+            }
             showAlert.onNext(getAlertConfirmOrderErrorModel())
         }
         
@@ -73,6 +83,12 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
     private func getAlertConfirmOrderErrorModel() -> ShowAlertModel {
         .init(title: "Não foi possível apresentar os pedidos",
               message: "Tente novamente",
+              viewControllerRef: viewControllerRef)
+    }
+    
+    private func getAlertEmptyErrorModel() -> ShowAlertModel {
+        .init(title: "\(client.name) ainda não realizou nenhum pedido!",
+              message: "",
               viewControllerRef: viewControllerRef)
     }
 }

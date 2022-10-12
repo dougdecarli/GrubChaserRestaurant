@@ -12,9 +12,9 @@ import RxDataSources
 class GBROrdersViewController: GrubChaserBaseViewController<GBROrdersViewModel> {
     @IBOutlet weak var newOrdersTableView: UITableView!
     
-    typealias OrdersSectionModel = AnimatableSectionModel<String, GBROrderModel>
-    typealias OrdersTableViewDataSource = RxTableViewSectionedAnimatedDataSource<OrdersSectionModel>
-    lazy var dataSource = OrdersTableViewDataSource(animationConfiguration: .init(insertAnimation: .automatic), configureCell: { [weak self] (dataSource, tableView, indexPath, item) in
+    typealias OrdersSectionModel = SectionModel<String, GBROrderModel>
+    typealias OrdersTableViewDataSource = RxTableViewSectionedReloadDataSource<OrdersSectionModel>
+    lazy var dataSource = OrdersTableViewDataSource(configureCell: { [weak self] (dataSource, tableView, indexPath, item) in
         guard let self = self else { return UITableViewCell() }
         if let cell = tableView.dequeueReusableCell(withIdentifier: GBROrdersTableViewCell.identifier,
                                                     for: indexPath) as? GBROrdersTableViewCell {

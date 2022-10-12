@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-102" y="441"/>
         </scene>
-        <!--Mesas-->
+        <!--Mesas ocupadas-->
         <scene sceneID="IQ2-Bv-dCU">
             <objects>
-                <viewController title="Mesas" id="4hj-pJ-LcQ" customClass="GBRTablesViewController" customModule="GrubChaserRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mesas ocupadas" id="4hj-pJ-LcQ" customClass="GBRTablesViewController" customModule="GrubChaserRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rnt-Eo-g4J">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                             <constraint firstItem="kN6-A0-oAG" firstAttribute="top" secondItem="4IK-A5-OVM" secondAttribute="top" id="uP3-Br-0H5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mesas" largeTitleDisplayMode="always" id="h4W-SW-rDx"/>
+                    <navigationItem key="navigationItem" title="Mesas ocupadas" largeTitleDisplayMode="always" id="h4W-SW-rDx"/>
                     <connections>
                         <outlet property="tablesCollectionView" destination="kN6-A0-oAG" id="Kzd-It-jnb"/>
                     </connections>
@@ -120,6 +120,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" id="QNc-Fw-tG1"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="clientsTableView" destination="Hle-BD-FXQ" id="4ce-kj-Aim"/>
@@ -128,24 +129,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfu-GG-UrI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="441"/>
+            <point key="canvasLocation" x="1540" y="441"/>
         </scene>
         <!--Client Orders View Controller-->
         <scene sceneID="i5G-CX-bMf">
             <objects>
                 <viewController storyboardIdentifier="clientsOrderVC" id="Hxp-35-UW3" customClass="GBRClientOrdersViewController" customModule="GrubChaserRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8f2-Uc-PsM">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTN-qE-PvS">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="108"/>
-                                <items>
-                                    <navigationItem title="Pedidos" largeTitleDisplayMode="always" id="nKV-05-U2x"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qfg-It-X3i">
-                                <rect key="frame" x="0.0" y="108" width="390" height="679"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="f0K-rA-WxP">
@@ -162,13 +157,10 @@
                         <viewLayoutGuide key="safeArea" id="Ctd-me-MFG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KTN-qE-PvS" firstAttribute="top" secondItem="8f2-Uc-PsM" secondAttribute="top" id="Q48-yi-AhU"/>
-                            <constraint firstItem="qfg-It-X3i" firstAttribute="leading" secondItem="Ctd-me-MFG" secondAttribute="leading" id="Yb8-Wz-wFA"/>
-                            <constraint firstItem="qfg-It-X3i" firstAttribute="trailing" secondItem="Ctd-me-MFG" secondAttribute="trailing" id="az1-BI-LtT"/>
-                            <constraint firstAttribute="trailing" secondItem="KTN-qE-PvS" secondAttribute="trailing" id="b6k-s5-h7S"/>
-                            <constraint firstItem="KTN-qE-PvS" firstAttribute="leading" secondItem="8f2-Uc-PsM" secondAttribute="leading" id="hzf-Ps-LYS"/>
-                            <constraint firstItem="Ctd-me-MFG" firstAttribute="bottom" secondItem="qfg-It-X3i" secondAttribute="bottom" id="w16-CQ-4Mj"/>
-                            <constraint firstItem="qfg-It-X3i" firstAttribute="top" secondItem="KTN-qE-PvS" secondAttribute="bottom" id="yle-s9-vCG"/>
+                            <constraint firstItem="qfg-It-X3i" firstAttribute="leading" secondItem="Ctd-me-MFG" secondAttribute="leading" id="2B2-IC-Uix"/>
+                            <constraint firstItem="qfg-It-X3i" firstAttribute="trailing" secondItem="Ctd-me-MFG" secondAttribute="trailing" id="7fR-ja-ioD"/>
+                            <constraint firstItem="qfg-It-X3i" firstAttribute="bottom" secondItem="Ctd-me-MFG" secondAttribute="bottom" id="fEF-kn-jp4"/>
+                            <constraint firstItem="qfg-It-X3i" firstAttribute="top" secondItem="Ctd-me-MFG" secondAttribute="top" id="qwX-P2-yzI"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -176,14 +168,13 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="clientOrdersTableView" destination="qfg-It-X3i" id="xnK-f7-vtI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZj-Qd-SS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366" y="441"/>
+            <point key="canvasLocation" x="2234" y="441"/>
         </scene>
     </scenes>
     <resources>

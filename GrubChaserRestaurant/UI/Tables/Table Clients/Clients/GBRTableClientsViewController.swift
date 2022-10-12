@@ -44,6 +44,7 @@ class GBRTableClientsViewController: GrubChaserBaseViewController<GBRTableClient
         clientsTableView
             .rx
             .modelSelected(GBRUserModel.self)
+            .do(onNext: dismiss)
             .bind(to: viewModel.onClientTouched)
             .disposed(by: disposeBag)
     }
@@ -63,5 +64,11 @@ class GBRTableClientsViewController: GrubChaserBaseViewController<GBRTableClient
         clientsTableView.register(UINib(nibName: GBRTableClientTableViewCell.nibName,
                                           bundle: .main),
                                     forCellReuseIdentifier: GBRTableClientTableViewCell.identifier)
+    }
+    
+    private func dismiss(_: Any) {
+        dismiss(animated: true) {
+            
+        }
     }
 }

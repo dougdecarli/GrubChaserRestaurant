@@ -27,21 +27,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zd0-TP-sEO">
-                                <rect key="frame" x="8" y="144" width="97" height="25"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="users" translatesAutoresizingMaskIntoConstraints="NO" id="4js-Bu-48g">
+                                <rect key="frame" x="8" y="144" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="FJf-OW-vBE"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="sNJ-Yl-5nv"/>
+                                    <constraint firstAttribute="width" constant="25" id="73h-ae-eI9"/>
+                                    <constraint firstAttribute="height" constant="25" id="QEa-Up-PI2"/>
                                 </constraints>
-                            </stackView>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqZ-gH-wZ0">
+                                <rect key="frame" x="37" y="149" width="8" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="zd0-TP-sEO" secondAttribute="bottom" constant="8" id="5xU-6a-lFi"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zd0-TP-sEO" secondAttribute="trailing" constant="8" id="6jH-Kk-jso"/>
                             <constraint firstItem="5HY-nU-z6Q" firstAttribute="centerX" secondItem="MUs-K5-9Le" secondAttribute="centerX" id="HkW-YU-Cw1"/>
+                            <constraint firstItem="gqZ-gH-wZ0" firstAttribute="leading" secondItem="4js-Bu-48g" secondAttribute="trailing" constant="4" id="IgR-d6-y5T"/>
                             <constraint firstItem="5HY-nU-z6Q" firstAttribute="centerY" secondItem="MUs-K5-9Le" secondAttribute="centerY" id="Ocm-An-XM8"/>
-                            <constraint firstItem="zd0-TP-sEO" firstAttribute="leading" secondItem="MUs-K5-9Le" secondAttribute="leading" constant="8" id="w3T-ab-Qb7"/>
+                            <constraint firstItem="gqZ-gH-wZ0" firstAttribute="centerY" secondItem="4js-Bu-48g" secondAttribute="centerY" id="SFE-ud-8oe"/>
+                            <constraint firstAttribute="bottom" secondItem="4js-Bu-48g" secondAttribute="bottom" constant="8" id="dfj-fZ-ATq"/>
+                            <constraint firstItem="4js-Bu-48g" firstAttribute="leading" secondItem="MUs-K5-9Le" secondAttribute="leading" constant="8" id="uTI-KU-At2"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -60,13 +67,15 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="clientsStackView" destination="zd0-TP-sEO" id="dgY-GD-MUm"/>
+                <outlet property="clientsImage" destination="4js-Bu-48g" id="84D-WR-9bD"/>
+                <outlet property="clientsNumberLabel" destination="gqZ-gH-wZ0" id="TfP-tT-pQD"/>
                 <outlet property="tableNameLabel" destination="5HY-nU-z6Q" id="L0P-lU-PQU"/>
             </connections>
             <point key="canvasLocation" x="11.538461538461538" y="55.094786729857816"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="users" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

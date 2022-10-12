@@ -24,14 +24,13 @@ class GBRTablesRouter: GBRTablesRouterProtocol {
         navigationController.present(vc, animated: true)
     }
     
-    func presentClientOrders(table: GBRTableModel,
-                             client: GBRUserModel,
-                             clientsTableVc: GBRTableClientsViewController) {
+    func goToClientOrders(table: GBRTableModel,
+                             client: GBRUserModel) {
         let vc = tablesStoryboard.instantiateViewController(withIdentifier: "clientsOrderVC") as! GBRClientOrdersViewController
         vc.viewModel = GBRClientOrdersViewModel(table: table,
                                                 client: client,
                                                 router: self,
                                                 viewControllerRef: vc)
-        clientsTableVc.present(vc, animated: true)
+        navigationController.pushViewController(vc, animated: true)
     }
 }

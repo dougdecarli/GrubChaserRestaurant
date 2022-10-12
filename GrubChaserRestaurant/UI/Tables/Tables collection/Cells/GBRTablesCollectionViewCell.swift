@@ -8,8 +8,9 @@
 import UIKit
 
 class GBRTablesCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var clientsNumberLabel: UILabel!
+    @IBOutlet weak var clientsImage: UIImageView!
     @IBOutlet weak var tableNameLabel: UILabel!
-    @IBOutlet weak var clientsStackView: UIStackView!
     
     static let identifier = "GBRTablesCollectionViewCell",
                nibName = "GBRTablesCollectionViewCell"
@@ -19,14 +20,12 @@ class GBRTablesCollectionViewCell: UICollectionViewCell {
     }
 
     func bind(table: GBRTableModel) {
-        clientsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         tableNameLabel.text = table.name
-        guard let users = table.clients else { return }
-        users.forEach({ user in
-            let userIcon = UIImageView(image: R.image.check()!)
-            userIcon.contentMode = .scaleAspectFit
-            userIcon.tintColor = .white
-            clientsStackView.addArranged(userIcon)
-        })
+        guard let users = table.clients else {
+            clientsNumberLabel.isHidden = true
+            clientsImage.isHidden = true
+            return
+        }
+        clientsNumberLabel.text = String(users.count)
     }
 }

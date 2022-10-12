@@ -206,7 +206,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
     /// Image `check`.
     static let check = Rswift.ImageResource(bundle: R.hostingBundle, name: "check")
@@ -224,6 +224,8 @@ struct R: Rswift.Validatable {
     static let userBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "user-background")
     /// Image `user`.
     static let user = Rswift.ImageResource(bundle: R.hostingBundle, name: "user")
+    /// Image `users`.
+    static let users = Rswift.ImageResource(bundle: R.hostingBundle, name: "users")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "check", bundle: ..., traitCollection: ...)`
@@ -278,6 +280,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "user-background", bundle: ..., traitCollection: ...)`
     static func userBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.userBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "users", bundle: ..., traitCollection: ...)`
+    static func users(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.users, compatibleWith: traitCollection)
     }
     #endif
 
@@ -385,6 +394,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _GBRTableClientTableViewCell.validate()
+      try _GBRTablesCollectionViewCell.validate()
     }
 
     struct _GBROrderProductsTableViewCell: Rswift.NibResourceType {
@@ -426,12 +436,18 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _GBRTablesCollectionViewCell: Rswift.NibResourceType {
+    struct _GBRTablesCollectionViewCell: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "GBRTablesCollectionViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBRTablesCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBRTablesCollectionViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "users", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'users' is used in nib 'GBRTablesCollectionViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}

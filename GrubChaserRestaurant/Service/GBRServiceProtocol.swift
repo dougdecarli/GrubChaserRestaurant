@@ -13,4 +13,6 @@ protocol GBRServiceProtocol {
     func postOrderConfirmed(orderId: String) -> Observable<Void>
     func listenToNewOrders() -> Observable<Void>
     func getTables() -> Observable<[GBRTableModel]>
+    func getClientOrders(from tableId: String,
+                         and userId: String) -> Observable<[GBROrderModel]>
 }

@@ -91,7 +91,7 @@
                 <outlet property="productPriceLabel" destination="Tro-A9-FJs" id="Nr0-em-neN"/>
                 <outlet property="productQuantity" destination="WqP-Us-MfN" id="FAV-uO-Mm0"/>
             </connections>
-            <point key="canvasLocation" x="135.38461538461539" y="-25.236966824644547"/>
+            <point key="canvasLocation" x="135.38461538461539" y="-25.592417061611375"/>
         </tableViewCell>
     </objects>
 </document>

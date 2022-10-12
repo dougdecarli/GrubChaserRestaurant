@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0ADA8028F61DB5006120DD /* GBRClientOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0ADA7F28F61DB5006120DD /* GBRClientOrdersViewController.swift */; };
+		4B0ADA8228F61DE7006120DD /* GBRClientOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0ADA8128F61DE7006120DD /* GBRClientOrdersViewModel.swift */; };
 		4B4B300928F49BB7000B4176 /* GBRTablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B300828F49BB7000B4176 /* GBRTablesViewController.swift */; };
 		4B4B300B28F49BF4000B4176 /* GBRTablesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B300A28F49BF4000B4176 /* GBRTablesViewModel.swift */; };
 		4B4B300E28F49C12000B4176 /* GBRTablesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B300D28F49C12000B4176 /* GBRTablesRouter.swift */; };
@@ -86,6 +88,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0ADA7F28F61DB5006120DD /* GBRClientOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRClientOrdersViewController.swift; sourceTree = "<group>"; };
+		4B0ADA8128F61DE7006120DD /* GBRClientOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRClientOrdersViewModel.swift; sourceTree = "<group>"; };
 		4B4B300828F49BB7000B4176 /* GBRTablesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTablesViewController.swift; sourceTree = "<group>"; };
 		4B4B300A28F49BF4000B4176 /* GBRTablesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTablesViewModel.swift; sourceTree = "<group>"; };
 		4B4B300D28F49C12000B4176 /* GBRTablesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRTablesRouter.swift; sourceTree = "<group>"; };
@@ -189,6 +193,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4B0ADA7D28F61D76006120DD /* Client Orders */ = {
+			isa = PBXGroup;
+			children = (
+				4B0ADA7F28F61DB5006120DD /* GBRClientOrdersViewController.swift */,
+				4B0ADA8128F61DE7006120DD /* GBRClientOrdersViewModel.swift */,
+			);
+			path = "Client Orders";
+			sourceTree = "<group>";
+		};
+		4B0ADA7E28F61D93006120DD /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				4B4B302028F5F84D000B4176 /* Cells */,
+				4B4B301C28F5F4D0000B4176 /* GBRTableClientsViewController.swift */,
+				4B4B301E28F5F4E3000B4176 /* GBRTableClientsViewModel.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
 		4B4B300C28F49C05000B4176 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,9 +243,8 @@
 		4B4B301B28F5F457000B4176 /* Table Clients */ = {
 			isa = PBXGroup;
 			children = (
-				4B4B302028F5F84D000B4176 /* Cells */,
-				4B4B301C28F5F4D0000B4176 /* GBRTableClientsViewController.swift */,
-				4B4B301E28F5F4E3000B4176 /* GBRTableClientsViewModel.swift */,
+				4B0ADA7E28F61D93006120DD /* Clients */,
+				4B0ADA7D28F61D76006120DD /* Client Orders */,
 			);
 			path = "Table Clients";
 			sourceTree = "<group>";
@@ -697,6 +719,7 @@
 				4B66888128ECACE3006F5C84 /* Reactive+UITableViewCell.swift in Sources */,
 				4B66887828ECACE3006F5C84 /* UIView+width.swift in Sources */,
 				4BE67F3728F37F3D0082F6FC /* GBROrderDetailViewModel.swift in Sources */,
+				4B0ADA8028F61DB5006120DD /* GBRClientOrdersViewController.swift in Sources */,
 				4BE67F3F28F3875B0082F6FC /* R.generated.swift in Sources */,
 				4B6688A328ECB04D006F5C84 /* GBRServiceProtocol.swift in Sources */,
 				4B6688A728ECC801006F5C84 /* GBRRestaurantLoggedModel.swift in Sources */,
@@ -709,6 +732,7 @@
 				4B66887428ECACE3006F5C84 /* UIView+trailing.swift in Sources */,
 				4B66888528ECAD36006F5C84 /* LoginRouter.swift in Sources */,
 				4B66889A28ECAF90006F5C84 /* GrubChaserBaseViewController.swift in Sources */,
+				4B0ADA8228F61DE7006120DD /* GBRClientOrdersViewModel.swift in Sources */,
 				4B66888228ECACE3006F5C84 /* Reactive+FirestoreQuery.swift in Sources */,
 				4B66888E28ECAF5B006F5C84 /* GBRLoginViewController.swift in Sources */,
 				4B4B301028F49C1C000B4176 /* GBRTablesRouterProtocol.swift in Sources */,

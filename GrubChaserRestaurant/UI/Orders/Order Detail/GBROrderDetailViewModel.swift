@@ -84,7 +84,7 @@ class GBROrderDetailViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> 
     }
     
     private func getAlertConfirmOrderErrorModel() -> ShowAlertModel {
-        .init(title: "Não foi confirmar o pedido",
+        .init(title: "Não foi possível confirmar o pedido",
               message: "Tente novamente",
               viewControllerRef: viewControllerRef)
     }

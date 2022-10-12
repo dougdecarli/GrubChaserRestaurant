@@ -9,4 +9,7 @@ import Foundation
 
 protocol GBRTablesRouterProtocol {
     func presentTableClients(table: GBRTableModel)
+    func presentClientOrders(table: GBRTableModel,
+                             client: GBRUserModel,
+                             clientsTableVc: GBRTableClientsViewController)
 }

@@ -75,4 +75,18 @@ class GBRService: GBRServiceProtocol {
             .getDocuments()
             .decode(GBRTableModel.self)
     }
+    
+    func getClientOrders(from tableId: String,
+                         and userId: String) -> Observable<[GBROrderModel]> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .whereField("tableId", isEqualTo: tableId)
+            .whereField("userId", isEqualTo: userId)
+            .order(by: "timestamp", descending: true)
+            .rx
+            .getDocuments()
+            .decode(GBROrderModel.self)
+    }
 }

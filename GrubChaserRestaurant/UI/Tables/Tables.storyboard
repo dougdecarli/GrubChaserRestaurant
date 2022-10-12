@@ -85,10 +85,10 @@
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlN-N1-swC">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="108"/>
                                 <items>
-                                    <navigationItem title="Pedido" largeTitleDisplayMode="always" id="vuf-Jg-9gf"/>
+                                    <navigationItem title="Clientes" largeTitleDisplayMode="always" id="vuf-Jg-9gf"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hle-BD-FXQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hle-BD-FXQ">
                                 <rect key="frame" x="0.0" y="108" width="390" height="679"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -129,6 +129,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfu-GG-UrI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1618" y="441"/>
+        </scene>
+        <!--Client Orders View Controller-->
+        <scene sceneID="i5G-CX-bMf">
+            <objects>
+                <viewController storyboardIdentifier="clientsOrderVC" id="Hxp-35-UW3" customClass="GBRClientOrdersViewController" customModule="GrubChaserRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8f2-Uc-PsM">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTN-qE-PvS">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="108"/>
+                                <items>
+                                    <navigationItem title="Pedidos" largeTitleDisplayMode="always" id="nKV-05-U2x"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qfg-It-X3i">
+                                <rect key="frame" x="0.0" y="108" width="390" height="679"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="f0K-rA-WxP">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f0K-rA-WxP" id="T0H-T4-amu">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ctd-me-MFG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KTN-qE-PvS" firstAttribute="top" secondItem="8f2-Uc-PsM" secondAttribute="top" id="Q48-yi-AhU"/>
+                            <constraint firstItem="qfg-It-X3i" firstAttribute="leading" secondItem="Ctd-me-MFG" secondAttribute="leading" id="Yb8-Wz-wFA"/>
+                            <constraint firstItem="qfg-It-X3i" firstAttribute="trailing" secondItem="Ctd-me-MFG" secondAttribute="trailing" id="az1-BI-LtT"/>
+                            <constraint firstAttribute="trailing" secondItem="KTN-qE-PvS" secondAttribute="trailing" id="b6k-s5-h7S"/>
+                            <constraint firstItem="KTN-qE-PvS" firstAttribute="leading" secondItem="8f2-Uc-PsM" secondAttribute="leading" id="hzf-Ps-LYS"/>
+                            <constraint firstItem="Ctd-me-MFG" firstAttribute="bottom" secondItem="qfg-It-X3i" secondAttribute="bottom" id="w16-CQ-4Mj"/>
+                            <constraint firstItem="qfg-It-X3i" firstAttribute="top" secondItem="KTN-qE-PvS" secondAttribute="bottom" id="yle-s9-vCG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="systemBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="clientOrdersTableView" destination="qfg-It-X3i" id="xnK-f7-vtI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZj-Qd-SS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2366" y="441"/>
         </scene>
     </scenes>
     <resources>

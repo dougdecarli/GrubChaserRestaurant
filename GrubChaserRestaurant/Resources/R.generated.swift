@@ -550,8 +550,13 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let clientsOrderVC = StoryboardViewControllerResource<GBRClientOrdersViewController>(identifier: "clientsOrderVC")
       let clientsTableVC = StoryboardViewControllerResource<GBRTableClientsViewController>(identifier: "clientsTableVC")
       let name = "Tables"
+
+      func clientsOrderVC(_: Void = ()) -> GBRClientOrdersViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: clientsOrderVC)
+      }
 
       func clientsTableVC(_: Void = ()) -> GBRTableClientsViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: clientsTableVC)
@@ -561,6 +566,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "table-default", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'table-default' is used in storyboard 'Tables', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.tables().clientsOrderVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'clientsOrderVC' could not be loaded from storyboard 'Tables' as 'GBRClientOrdersViewController'.") }
         if _R.storyboard.tables().clientsTableVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'clientsTableVC' could not be loaded from storyboard 'Tables' as 'GBRTableClientsViewController'.") }
       }
 

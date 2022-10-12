@@ -35,11 +35,15 @@ class GBRTableClientsViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
     //MARK: - Inputs
     private func setupOnClientTouched() {
         onClientTouched
-            .subscribe()
+            .subscribe(onNext: presentClientOrders)
             .disposed(by: disposeBag)
     }
     
-    //MARK: - Outputs
-    
+    //MARK: - Navigation
+    private func presentClientOrders(client: GBRUserModel) {
+        router.presentClientOrders(table: table,
+                                   client: client,
+                                   clientsTableVc: viewControllerRef as! GBRTableClientsViewController)
+    }
 }
  

@@ -21,7 +21,8 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
     let client: GBRUserModel,
         table: GBRTableModel,
         orderProductsBag = BehaviorRelay<[ClientsOrderSectionModel]>(value: []),
-        onViewWillAppear = PublishRelay<Void>()
+        onViewWillAppear = PublishRelay<Void>(),
+        onFinishOrdersButton = PublishRelay<Void>()
     
     init(table: GBRTableModel,
          client: GBRUserModel,
@@ -36,6 +37,7 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
     override func setupBindings() {
         super.setupBindings()
         setupOnViewWillAppear()
+        setupOnFinishOrdersButton()
     }
     
     //MARK: - Inputs
@@ -43,6 +45,12 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
         onViewWillAppear
             .do(onNext: startLoader)
             .subscribe(onNext: getClientOrders)
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupOnFinishOrdersButton() {
+        onFinishOrdersButton
+            .subscribe()
             .disposed(by: disposeBag)
     }
     

@@ -13,6 +13,8 @@ typealias ClientsOrderSectionModel = SectionModel<String, GBRProductBag>
 typealias ClientsOrderTableViewDataSource = RxTableViewSectionedReloadDataSource<ClientsOrderSectionModel>
 
 class GBRClientOrdersViewController: GrubChaserBaseViewController<GBRClientOrdersViewModel> {
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var finishOrdersButton: UIButton!
     @IBOutlet weak var clientOrdersTableView: UITableView!
     
     lazy var dataSource = ClientsOrderTableViewDataSource(configureCell: { [weak self] (dataSource, tableView, indexPath, item) in
@@ -52,6 +54,12 @@ class GBRClientOrdersViewController: GrubChaserBaseViewController<GBRClientOrder
             .clientOrdersCells
             .startWith([])
             .bind(to: clientOrdersTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .totalPrice
+            .map { String($0).currencyFormatting() }
+            .bind(to: totalPriceLabel.rx.text)
             .disposed(by: disposeBag)
     }
     

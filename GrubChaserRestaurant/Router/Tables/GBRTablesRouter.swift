@@ -33,4 +33,8 @@ class GBRTablesRouter: GBRTablesRouterProtocol {
                                                 viewControllerRef: vc)
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func pop() {
+        navigationController.popToRootViewController(animated: true)
+    }
 }

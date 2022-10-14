@@ -22,10 +22,26 @@ class GBROrdersTableViewCell: UITableViewCell {
     }
 
     func bind(order: GBROrderModel) {
+        confirmButton.isHidden = true
+        productsQuantityLabel.text = ""
         userNameLabel.text = order.userName
         tableNameLabel.text = order.tableName
         timeLabel.text = Date.getDateFormatter(timestamp: order.timestamp)
-        productsQuantityLabel.text = "\(getNumberOfProducts(order.products)) produtos"
+        productsQuantityLabel.text = "\(getNumberOfProducts(order.products)) \(getNumberOfProducts(order.products) > 1 ? "produtos" : "produto")"
+        setupButtonLayout(orderStatus: order.status)
+    }
+    
+    private func setupButtonLayout(orderStatus: GBROrderStatus) {
+        switch orderStatus {
+        case .waitingConfirmation:
+            confirmButton.isHidden = false
+            confirmButton.setTitle("Confirmar", for: .normal)
+        case .confirmed:
+            confirmButton.isHidden = false
+            confirmButton.setTitle("Finalizar", for: .normal)
+        case .finished:
+            confirmButton.isHidden = true
+        }
     }
     
     private func getNumberOfProducts(_ products: [GBRProductBag]) -> Int {

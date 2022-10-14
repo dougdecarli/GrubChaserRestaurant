@@ -36,3 +36,18 @@ enum GBROrderStatus: String, Codable {
     case confirmed = "CONFIRMADO"
     case finished = "FINALIZADO"
 }
+
+extension GBROrderStatus {
+    init(_ segmentedSelected: Int) {
+        switch segmentedSelected {
+        case 0:
+            self = .waitingConfirmation
+        case 1:
+            self = .confirmed
+        case 2:
+            self = .finished
+        default:
+            self = .waitingConfirmation
+        }
+    }
+}

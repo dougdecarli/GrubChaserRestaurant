@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="5HY-nU-z6Q" firstAttribute="centerX" secondItem="MUs-K5-9Le" secondAttribute="centerX" id="HkW-YU-Cw1"/>
                             <constraint firstItem="gqZ-gH-wZ0" firstAttribute="leading" secondItem="4js-Bu-48g" secondAttribute="trailing" constant="4" id="IgR-d6-y5T"/>
@@ -50,6 +50,11 @@
                             <constraint firstAttribute="bottom" secondItem="4js-Bu-48g" secondAttribute="bottom" constant="8" id="dfj-fZ-ATq"/>
                             <constraint firstItem="4js-Bu-48g" firstAttribute="leading" secondItem="MUs-K5-9Le" secondAttribute="leading" constant="8" id="uTI-KU-At2"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="systemGray3Color"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -69,6 +74,7 @@
             <connections>
                 <outlet property="clientsImage" destination="4js-Bu-48g" id="84D-WR-9bD"/>
                 <outlet property="clientsNumberLabel" destination="gqZ-gH-wZ0" id="TfP-tT-pQD"/>
+                <outlet property="containerView" destination="MUs-K5-9Le" id="Ceu-hW-ksa"/>
                 <outlet property="tableNameLabel" destination="5HY-nU-z6Q" id="L0P-lU-PQU"/>
             </connections>
             <point key="canvasLocation" x="11.538461538461538" y="55.094786729857816"/>
@@ -76,8 +82,11 @@
     </objects>
     <resources>
         <image name="users" width="21.333333969116211" height="21.333333969116211"/>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

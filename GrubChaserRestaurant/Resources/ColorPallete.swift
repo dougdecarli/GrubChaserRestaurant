@@ -12,20 +12,10 @@ import UIKit
 class ColorPallete {
     static var defaultRed = UIColor(hexString: "#EE6A53")
     static var defaultYellow = UIColor(hexString: "#FFD60A")
-    
-    static var commonBlack = UIColor(hexString: "#1E1E1F")
-    static var commonLightGray = UIColor(hexString: "#E0E0E0")
-    static var commonWhite = UIColor(hexString: "#F2F2F2")
-    static var commonDarkGray = UIColor(hexString: "#706F6F")
-    static var commonMiddleGray = UIColor(hexString: "#ACACAC")
+    static var defaultGray = UIColor(hexString: "#F5F5F5")
 }
 
 public extension UIColor {
-    
-    static var oldPriceGray: UIColor {
-        return .init(hexString: "#333333")
-    }
-
     static var sixtyPercentAlphaWhite: UIColor {
         return UIColor(white: 1, alpha: 0.6)
     }

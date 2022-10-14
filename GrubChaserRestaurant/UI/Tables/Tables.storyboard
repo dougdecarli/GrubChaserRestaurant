@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kN6-A0-oAG">
-                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <rect key="frame" x="0.0" y="146" width="390" height="664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NPX-Tx-F64">
                                     <size key="itemSize" width="128" height="128"/>
@@ -55,24 +55,39 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VJU-qy-GYf">
+                                <rect key="frame" x="0.0" y="91" width="390" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="tcH-Tj-N0x"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Todas as mesas"/>
+                                    <segment title="Mesas ocupadas"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.93333333330000001" green="0.41568627450000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4IK-A5-OVM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4IK-A5-OVM" firstAttribute="trailing" secondItem="kN6-A0-oAG" secondAttribute="trailing" id="2jM-No-RIt"/>
-                            <constraint firstItem="4IK-A5-OVM" firstAttribute="bottom" secondItem="kN6-A0-oAG" secondAttribute="bottom" id="DhQ-xN-08f"/>
-                            <constraint firstItem="kN6-A0-oAG" firstAttribute="leading" secondItem="4IK-A5-OVM" secondAttribute="leading" id="inJ-zT-zFU"/>
-                            <constraint firstItem="kN6-A0-oAG" firstAttribute="top" secondItem="4IK-A5-OVM" secondAttribute="top" id="uP3-Br-0H5"/>
+                            <constraint firstItem="VJU-qy-GYf" firstAttribute="trailing" secondItem="4IK-A5-OVM" secondAttribute="trailing" id="5da-Dl-NsA"/>
+                            <constraint firstItem="kN6-A0-oAG" firstAttribute="bottom" secondItem="4IK-A5-OVM" secondAttribute="bottom" id="GO3-wl-M9J"/>
+                            <constraint firstItem="VJU-qy-GYf" firstAttribute="leading" secondItem="4IK-A5-OVM" secondAttribute="leading" id="JWr-fe-1Eg"/>
+                            <constraint firstItem="VJU-qy-GYf" firstAttribute="top" secondItem="4IK-A5-OVM" secondAttribute="top" id="Pph-oa-YIL"/>
+                            <constraint firstItem="kN6-A0-oAG" firstAttribute="leading" secondItem="4IK-A5-OVM" secondAttribute="leading" id="R4B-pm-Dm4"/>
+                            <constraint firstItem="kN6-A0-oAG" firstAttribute="trailing" secondItem="4IK-A5-OVM" secondAttribute="trailing" id="fMl-qd-vuE"/>
+                            <constraint firstItem="kN6-A0-oAG" firstAttribute="top" secondItem="VJU-qy-GYf" secondAttribute="bottom" constant="10" id="zZq-bL-sYe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mesas ocupadas" largeTitleDisplayMode="always" id="h4W-SW-rDx"/>
                     <connections>
                         <outlet property="tablesCollectionView" destination="kN6-A0-oAG" id="Kzd-It-jnb"/>
+                        <outlet property="tablesSegmentedControl" destination="VJU-qy-GYf" id="Xve-bl-LQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJp-8h-Yik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="441"/>
+            <point key="canvasLocation" x="747.69230769230762" y="440.75829383886253"/>
         </scene>
         <!--Table Clients View Controller-->
         <scene sceneID="noY-3V-Dtb">

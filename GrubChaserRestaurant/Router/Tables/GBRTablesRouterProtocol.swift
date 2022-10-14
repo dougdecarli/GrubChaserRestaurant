@@ -11,4 +11,5 @@ protocol GBRTablesRouterProtocol {
     func presentTableClients(table: GBRTableModel)
     func goToClientOrders(table: GBRTableModel,
                              client: GBRUserModel)
+    func pop()
 }

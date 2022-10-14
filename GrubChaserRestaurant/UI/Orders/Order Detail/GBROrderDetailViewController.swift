@@ -31,6 +31,7 @@ class GBROrderDetailViewController: GrubChaserBaseViewController<GBROrderDetailV
         super.viewDidLoad()
         setupTableView()
         bind()
+        setupConfirmationButtonLayout()
     }
     
     override func bindInputs() {
@@ -60,6 +61,17 @@ class GBROrderDetailViewController: GrubChaserBaseViewController<GBROrderDetailV
             .totalPriceDriver
             .drive(orderPriceLabel.rx.text)
             .disposed(by: disposeBag)
+    }
+    
+    private func setupConfirmationButtonLayout() {
+        switch viewModel.order.status {
+        case .waitingConfirmation:
+            confirmOrderButton.setTitle("Confirmar", for: .normal)
+        case .confirmed:
+            confirmOrderButton.setTitle("Finalizar", for: .normal)
+        case .finished:
+            confirmOrderButton.isHidden = true
+        }
     }
     
     private func setupTableView() {

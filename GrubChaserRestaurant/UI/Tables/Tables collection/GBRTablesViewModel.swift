@@ -8,6 +8,22 @@
 import RxSwift
 import RxCocoa
 
+enum TablesSegmentedControlType: Int {
+    case allTables = 0
+    case occupiedTables = 1
+    
+    init(_ segmentedSelected: Int) {
+        switch segmentedSelected {
+        case 0:
+            self = .allTables
+        case 1:
+            self = .occupiedTables
+        default:
+            self = .allTables
+        }
+    }
+}
+
 class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
     var tableCells: Observable<[GBRTableModel]> {
         tables.asObservable()
@@ -17,21 +33,25 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
         isLoaderShowing = PublishSubject<Bool>()
     
     let onViewWillAppear = PublishRelay<Void>(),
-        onTableTouched = PublishRelay<GBRTableModel>()
+        onTableTouched = PublishRelay<GBRTableModel>(),
+        tablesSegmented = BehaviorRelay<TablesSegmentedControlType>(value: .allTables)
     
     private let tables = BehaviorRelay<[GBRTableModel]>(value: [])
     
     override func setupBindings() {
         super.setupBindings()
+        observeTables()
         setupOnViewWillAppear()
         setupOnTableTouched()
+        setupOnSegmentedSelected()
     }
     
     //MARK: - Inputs
     private func setupOnViewWillAppear() {
         onViewWillAppear
             .do(onNext: startLoader)
-            .subscribe(onNext: getRestaurantTables)
+            .withLatestFrom(tablesSegmented)
+            .subscribe(onNext: routeToGetTables)
             .disposed(by: disposeBag)
     }
     
@@ -41,8 +61,20 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
             .disposed(by: disposeBag)
     }
     
+    private func setupOnSegmentedSelected() {
+        tablesSegmented
+            .subscribe(onNext: routeToGetTables)
+            .disposed(by: disposeBag)
+    }
+    
     //MARK: - Service
-    private func getRestaurantTables() {
+    private func routeToGetTables(from segmentedSelected: TablesSegmentedControlType) {
+        segmentedSelected == .occupiedTables ?
+        getOccupiedRestaurantTables() :
+        getAllRestaurantTables()
+    }
+    
+    private func getAllRestaurantTables() {
         func handleSuccess(tables: [GBRTableModel]) {
             stopLoader()
             self.tables.accept(tables)
@@ -52,9 +84,33 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
             stopLoader()
         }
         
-        service.getTables()
+        service.getAllTables()
             .subscribe(onNext: handleSuccess(tables:),
                        onError: handleError(_:))
+            .disposed(by: disposeBag)
+    }
+    
+    private func getOccupiedRestaurantTables() {
+        func handleSuccess(tables: [GBRTableModel]) {
+            stopLoader()
+            self.tables.accept(tables)
+        }
+        
+        func handleError(_: Error) {
+            stopLoader()
+        }
+        
+        service.getOccupiedTables()
+            .subscribe(onNext: handleSuccess(tables:),
+                       onError: handleError(_:))
+            .disposed(by: disposeBag)
+    }
+    
+    private func observeTables() {
+        service
+            .listenToTables()
+            .withLatestFrom(tablesSegmented)
+            .subscribe(onNext: routeToGetTables)
             .disposed(by: disposeBag)
     }
     

@@ -76,6 +76,9 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
             stopLoader()
             if error is DecodableErrorType {
                 showAlert.onNext(getAlertEmptyErrorModel())
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                    self.router.pop()
+                }
                 return
             }
             showAlert.onNext(getAlertConfirmOrderErrorModel())
@@ -95,7 +98,7 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
     }
     
     private func getAlertEmptyErrorModel() -> ShowAlertModel {
-        .init(title: "\(client.name) ainda não realizou nenhum pedido!",
+        .init(title: "O cliente \(client.name.split(separator: " ").first!) ainda não realizou nenhum pedido na mesa \(table.name)",
               message: "",
               viewControllerRef: viewControllerRef)
     }

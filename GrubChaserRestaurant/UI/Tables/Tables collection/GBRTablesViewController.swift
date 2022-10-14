@@ -10,6 +10,7 @@ import RxDataSources
 
 class GBRTablesViewController: GrubChaserBaseViewController<GBRTablesViewModel> {
     @IBOutlet weak var tablesCollectionView: UICollectionView!
+    @IBOutlet weak var tablesSegmentedControl: UISegmentedControl!
     
     typealias TablesSectionModel = AnimatableSectionModel<String, GBRTableModel>
     typealias TablesDataSource = RxCollectionViewSectionedAnimatedDataSource<TablesSectionModel>
@@ -44,6 +45,13 @@ class GBRTablesViewController: GrubChaserBaseViewController<GBRTablesViewModel> 
             .rx
             .modelSelected(GBRTableModel.self)
             .bind(to: viewModel.onTableTouched)
+            .disposed(by: disposeBag)
+        
+        tablesSegmentedControl
+            .rx
+            .selectedSegmentIndex
+            .map { TablesSegmentedControlType($0) }
+            .bind(to: viewModel.tablesSegmented)
             .disposed(by: disposeBag)
     }
     

@@ -26,9 +26,8 @@ class GBROrderDetailViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> 
             .asDriver(onErrorJustReturn: "")
     }
     
-    private let order: GBROrderModel
-    
-    let onConfirmOrderButtonTouched = PublishRelay<Void>(),
+    let order: GBROrderModel,
+        onConfirmOrderButtonTouched = PublishRelay<Void>(),
         onOrderConfirmedSuccess = PublishRelay<Void>()
     
     internal var showAlert = PublishSubject<ShowAlertModel>(),
@@ -49,15 +48,18 @@ class GBROrderDetailViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> 
     //MARK: - Inputs
     private func setupOnConfirmOrderButtonTouched() {
         onConfirmOrderButtonTouched
-            .do(onNext: startLoading(_:))
-            .subscribe(onNext: postOrderConfirmed)
+            .do(onNext: startLoading)
+            .map { [weak self] _ -> (String, GBROrderStatus) in
+                guard let self = self else { return ("", .waitingConfirmation) }
+                return (self.order.orderId, self.retrieveStatusToPut(from: self.order))
+            }
+            .subscribe(onNext: putOrderStatus)
             .disposed(by: disposeBag)
     }
     
-    //MARK: - Outputs
-    
     //MARK: - Service
-    private func postOrderConfirmed() {
+    private func putOrderStatus(orderId: String,
+                                _ status: GBROrderStatus) {
         func handleSuccess() {
             stopLoading()
             onOrderConfirmedSuccess.accept(())
@@ -68,13 +70,22 @@ class GBROrderDetailViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> 
             showAlert.onNext(getAlertConfirmOrderErrorModel())
         }
         
-        service.postOrderConfirmed(orderId: order.orderId)
+        service.putOrderStatus(order.orderId,
+                               to: status)
             .subscribe(onNext: handleSuccess,
                        onError: handleError)
             .disposed(by: disposeBag)
     }
     
     //MARK: - Helper methods
+    private func retrieveStatusToPut(from order: GBROrderModel) -> GBROrderStatus {
+        if order.status == .waitingConfirmation {
+            return .confirmed
+        } else {
+            return .finished
+        }
+    }
+    
     private func startLoading(_: Any? = nil) {
         isLoaderShowing.onNext(true)
     }

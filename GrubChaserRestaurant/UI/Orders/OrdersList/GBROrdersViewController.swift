@@ -11,6 +11,7 @@ import RxDataSources
 
 class GBROrdersViewController: GrubChaserBaseViewController<GBROrdersViewModel> {
     @IBOutlet weak var newOrdersTableView: UITableView!
+    @IBOutlet weak var ordersSegmentedControl: UISegmentedControl!
     
     typealias OrdersSectionModel = SectionModel<String, GBROrderModel>
     typealias OrdersTableViewDataSource = RxTableViewSectionedReloadDataSource<OrdersSectionModel>
@@ -29,7 +30,6 @@ class GBROrdersViewController: GrubChaserBaseViewController<GBROrdersViewModel> 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Novos Pedidos"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.setNavigationBarHidden(false, animated: true)
         viewModel = GBROrdersViewModel(router: GBROrderRouter(navigationController: navigationController ?? UINavigationController()),
@@ -50,6 +50,13 @@ class GBROrdersViewController: GrubChaserBaseViewController<GBROrdersViewModel> 
             .rx
             .modelSelected(GBROrderModel.self)
             .bind(to: viewModel.onOrderTouched)
+            .disposed(by: disposeBag)
+        
+        ordersSegmentedControl
+            .rx
+            .selectedSegmentIndex
+            .map { OrdersSegmented($0) }
+            .bind(to: viewModel.onSegmentedOrderSelected)
             .disposed(by: disposeBag)
     }
     

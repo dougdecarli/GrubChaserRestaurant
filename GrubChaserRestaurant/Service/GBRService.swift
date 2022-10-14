@@ -33,19 +33,19 @@ class GBRService: GBRServiceProtocol {
     }
     
     //MARK: - Orders
-    func getNewOrders() -> Observable<[GBROrderModel]> {
+    func getRestaurantOrders(from status: GBROrderStatus) -> Observable<[GBROrderModel]> {
         dbFirestore
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
             .collection("orders")
             .order(by: "timestamp", descending: true)
-            .whereField("status", isEqualTo: "AGUARDANDO CONFIRMAÇÃO")
+            .whereField("status", isEqualTo: status.rawValue)
             .rx
             .getDocuments()
             .decode(GBROrderModel.self)
     }
     
-    func listenToNewOrders() -> Observable<Void> {
+    func listenToOrders() -> Observable<Void> {
         dbFirestore
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
@@ -55,26 +55,49 @@ class GBRService: GBRServiceProtocol {
             .map { _ in }
     }
     
-    func postOrderConfirmed(orderId: String) -> Observable<Void> {
+    func putOrderStatus(_ orderId: String,
+                        to status: GBROrderStatus) -> Observable<Void> {
         dbFirestore
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
             .collection("orders")
             .document(orderId)
             .rx
-            .updateData(["status": "CONFIRMADO"])
+            .updateData(["status": status.rawValue])
     }
     
     //MARK: - Tables
-    func getTables() -> Observable<[GBRTableModel]> {
+    func getOccupiedTables() -> Observable<[GBRTableModel]> {
         dbFirestore
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
             .collection("tables")
-            .order(by: "clients", descending: true)
+            .order(by: "name", descending: false)
+            .order(by: "clients", descending: false)
             .rx
             .getDocuments()
             .decode(GBRTableModel.self)
+    }
+    
+    func getAllTables() -> Observable<[GBRTableModel]> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("tables")
+            .order(by: "name", descending: false)
+            .rx
+            .getDocuments()
+            .decode(GBRTableModel.self)
+    }
+    
+    func listenToTables() -> Observable<Void> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("tables")
+            .rx
+            .listen()
+            .map { _ in }
     }
     
     func getClientOrders(from tableId: String,

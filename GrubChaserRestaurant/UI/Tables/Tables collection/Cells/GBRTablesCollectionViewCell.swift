@@ -10,6 +10,7 @@ import UIKit
 class GBRTablesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var clientsNumberLabel: UILabel!
     @IBOutlet weak var clientsImage: UIImageView!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableNameLabel: UILabel!
     
     static let identifier = "GBRTablesCollectionViewCell",
@@ -17,6 +18,9 @@ class GBRTablesCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        clientsNumberLabel.isHidden = true
+        clientsImage.isHidden = true
+        containerView.backgroundColor = nil
     }
 
     func bind(table: GBRTableModel) {
@@ -24,8 +28,12 @@ class GBRTablesCollectionViewCell: UICollectionViewCell {
         guard let users = table.clients else {
             clientsNumberLabel.isHidden = true
             clientsImage.isHidden = true
+            containerView.backgroundColor = .systemGray2
             return
         }
+        containerView.backgroundColor = ColorPallete.defaultRed
+        clientsNumberLabel.isHidden = false
+        clientsImage.isHidden = false
         clientsNumberLabel.text = String(users.count)
     }
 }

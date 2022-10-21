@@ -50,7 +50,8 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
     
     private func setupOnFinishOrdersButton() {
         onFinishOrdersButton
-            .subscribe()
+            .do(onNext: startLoader)
+            .subscribe(onNext: putOrderClosedStatus)
             .disposed(by: disposeBag)
     }
     
@@ -79,7 +80,6 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                     self.router.pop()
                 }
-                return
             }
             showAlert.onNext(getAlertConfirmOrderErrorModel())
         }
@@ -90,10 +90,58 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
             .disposed(by: disposeBag)
     }
     
+    private func putOrderClosedStatus() {
+        func handleSuccess() {
+            stopLoader()
+            checkoutUserFromTable()
+        }
+        
+        func handleError(_: Error) {
+            stopLoader()
+            showAlert.onNext(getAlertCloseOrdersErrorModel())
+        }
+        
+        service.putOrderClosedStatus(from: table.id, and: client.uid)
+            .subscribe(onNext: handleSuccess)
+            .disposed(by: disposeBag)
+    }
+    
+    private func checkoutUserFromTable() {
+        func handleSuccess() {
+            stopLoader()
+            showAlert.onNext(getAlertCloseOrdersSuccessModel())
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                self.router.pop()
+            }
+        }
+        
+        func handleError(_: Error) {
+            stopLoader()
+            showAlert.onNext(getAlertCloseOrdersErrorModel())
+        }
+        
+        service.checkoutUser(from: table.id, and: client)
+            .subscribe(onNext: handleSuccess,
+                       onError: handleError)
+            .disposed(by: disposeBag)
+    }
+    
     //MARK: - Helper methods
     private func getAlertConfirmOrderErrorModel() -> ShowAlertModel {
         .init(title: "Não foi possível apresentar os pedidos",
               message: "Tente novamente",
+              viewControllerRef: viewControllerRef)
+    }
+    
+    private func getAlertCloseOrdersErrorModel() -> ShowAlertModel {
+        .init(title: "Não foi possível fechar a comanda",
+              message: "Tente novamente",
+              viewControllerRef: viewControllerRef)
+    }
+    
+    private func getAlertCloseOrdersSuccessModel() -> ShowAlertModel {
+        .init(title: "A comanda de \(client.name.split(separator: " ").first!) na \(table.name) foi fechada com sucesso!",
+              message: "",
               viewControllerRef: viewControllerRef)
     }
     

@@ -67,8 +67,6 @@ class GBRTableClientsViewController: GrubChaserBaseViewController<GBRTableClient
     }
     
     private func dismiss(_: Any) {
-        dismiss(animated: true) {
-            
-        }
+        dismiss(animated: true) {}
     }
 }

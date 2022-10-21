@@ -79,7 +79,7 @@
                             <constraint firstItem="kN6-A0-oAG" firstAttribute="top" secondItem="VJU-qy-GYf" secondAttribute="bottom" constant="10" id="zZq-bL-sYe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mesas ocupadas" largeTitleDisplayMode="always" id="h4W-SW-rDx"/>
+                    <navigationItem key="navigationItem" title="Mesas" largeTitleDisplayMode="always" id="h4W-SW-rDx"/>
                     <connections>
                         <outlet property="tablesCollectionView" destination="kN6-A0-oAG" id="Kzd-It-jnb"/>
                         <outlet property="tablesSegmentedControl" destination="VJU-qy-GYf" id="Xve-bl-LQd"/>

@@ -66,6 +66,42 @@ class GBRService: GBRServiceProtocol {
             .updateData(["status": status.rawValue])
     }
     
+    func putOrderClosedStatus(from tableId: String,
+                              and userId: String) -> Observable<Void> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .whereField("tableId", isEqualTo: tableId)
+            .whereField("userId", isEqualTo: userId)
+            .rx
+            .getDocuments()
+            .flatMap { docs -> Observable<Void> in
+                if docs.count > 0 {
+                    docs.documents.forEach { documentChange in
+                        documentChange.reference.updateData(["status": "FECHADO"])
+                    }
+                    return Observable.just(())
+                } else {
+                    return Observable.error(DecodableErrorType.decodedEmptyError)
+                }
+            }
+    }
+    
+    func getClientOrders(from tableId: String,
+                         and userId: String) -> Observable<[GBROrderModel]> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .whereField("tableId", isEqualTo: tableId)
+            .whereField("userId", isEqualTo: userId)
+            .order(by: "timestamp", descending: true)
+            .rx
+            .getDocuments()
+            .decode(GBROrderModel.self)
+    }
+    
     //MARK: - Tables
     func getOccupiedTables() -> Observable<[GBRTableModel]> {
         dbFirestore
@@ -100,17 +136,14 @@ class GBRService: GBRServiceProtocol {
             .map { _ in }
     }
     
-    func getClientOrders(from tableId: String,
-                         and userId: String) -> Observable<[GBROrderModel]> {
+    func checkoutUser(from tableId: String,
+                      and client: GBRUserModel) -> Observable<Void> {
         dbFirestore
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
-            .collection("orders")
-            .whereField("tableId", isEqualTo: tableId)
-            .whereField("userId", isEqualTo: userId)
-            .order(by: "timestamp", descending: true)
+            .collection("tables")
+            .document(tableId)
             .rx
-            .getDocuments()
-            .decode(GBROrderModel.self)
+            .updateData(["clients": FieldValue.arrayRemove([client.toDictionary!])])
     }
 }

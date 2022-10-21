@@ -16,6 +16,8 @@ protocol GBRServiceProtocol {
     func getOccupiedTables() -> Observable<[GBRTableModel]>
     func getAllTables() -> Observable<[GBRTableModel]>
     func listenToTables() -> Observable<Void>
+    func checkoutUser(from tableId: String,
+                      and client: GBRUserModel) -> Observable<Void>
     func getClientOrders(from tableId: String,
                          and userId: String) -> Observable<[GBROrderModel]>
 }

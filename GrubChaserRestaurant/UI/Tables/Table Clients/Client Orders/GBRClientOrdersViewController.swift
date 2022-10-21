@@ -34,6 +34,7 @@ class GBRClientOrdersViewController: GrubChaserBaseViewController<GBRClientOrder
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Pedidos de \(viewModel.client.name.split(separator: " ").first!)"
+        navigationController?.navigationBar.backItem?.title = "Mesas"
         setupTableView()
         bind()
     }
@@ -45,6 +46,11 @@ class GBRClientOrdersViewController: GrubChaserBaseViewController<GBRClientOrder
     
     override func bindInputs() {
         super.bindInputs()
+        
+        finishOrdersButton
+            .rx.tap
+            .bind(to: viewModel.onFinishOrdersButton)
+            .disposed(by: disposeBag)
     }
     
     override func bindOutputs() {

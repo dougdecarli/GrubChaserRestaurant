@@ -50,6 +50,7 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
     private func setupOnViewWillAppear() {
         onViewWillAppear
             .do(onNext: startLoader)
+            .do(onNext: eraseTables)
             .withLatestFrom(tablesSegmented)
             .subscribe(onNext: routeToGetTables)
             .disposed(by: disposeBag)
@@ -63,6 +64,8 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
     
     private func setupOnSegmentedSelected() {
         tablesSegmented
+            .do(onNext: startLoading)
+            .do(onNext: eraseTables)
             .subscribe(onNext: routeToGetTables)
             .disposed(by: disposeBag)
     }
@@ -93,7 +96,7 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
     private func getOccupiedRestaurantTables() {
         func handleSuccess(tables: [GBRTableModel]) {
             stopLoader()
-            self.tables.accept(tables)
+            self.tables.accept(tables.filter { $0.clients!.count > 0 })
         }
         
         func handleError(_: Error) {
@@ -124,9 +127,18 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
     }
     
     private func getAlertConfirmOrderErrorModel(tableName: String) -> ShowAlertModel {
-        .init(title: "\(tableName) ainda não possui pedidos",
+        .init(title: "\(tableName) ainda não possui clientes",
               message: "",
               viewControllerRef: viewControllerRef)
+    }
+    
+    //MARK: - Helper methods
+    private func eraseTables(_: Any?) {
+        tables.accept([])
+    }
+    
+    private func startLoading(_: Any? = nil) {
+        isLoaderShowing.onNext(true)
     }
 }
 

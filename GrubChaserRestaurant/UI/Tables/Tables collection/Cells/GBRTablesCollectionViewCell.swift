@@ -25,15 +25,16 @@ class GBRTablesCollectionViewCell: UICollectionViewCell {
 
     func bind(table: GBRTableModel) {
         tableNameLabel.text = table.name
-        guard let users = table.clients else {
+        if let users = table.clients,
+           users.count > 0 {
+            containerView.backgroundColor = ColorPallete.defaultRed
+            clientsNumberLabel.isHidden = false
+            clientsImage.isHidden = false
+            clientsNumberLabel.text = String(users.count)
+        } else {
             clientsNumberLabel.isHidden = true
             clientsImage.isHidden = true
             containerView.backgroundColor = .systemGray2
-            return
         }
-        containerView.backgroundColor = ColorPallete.defaultRed
-        clientsNumberLabel.isHidden = false
-        clientsImage.isHidden = false
-        clientsNumberLabel.text = String(users.count)
     }
 }

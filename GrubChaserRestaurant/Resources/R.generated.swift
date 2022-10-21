@@ -90,8 +90,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
+    /// Storyboard `Dashboard`.
+    static let dashboard = _R.storyboard.dashboard()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Login`.
@@ -102,6 +104,13 @@ struct R: Rswift.Validatable {
     static let orders = _R.storyboard.orders()
     /// Storyboard `Tables`.
     static let tables = _R.storyboard.tables()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Dashboard", bundle: ...)`
+    static func dashboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.dashboard)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -305,8 +314,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
+    /// Nib `GBRDashboardCollectionViewCell`.
+    static let gbrDashboardCollectionViewCell = _R.nib._GBRDashboardCollectionViewCell()
     /// Nib `GBROrderProductsTableViewCell`.
     static let gbrOrderProductsTableViewCell = _R.nib._GBROrderProductsTableViewCell()
     /// Nib `GBROrdersTableViewCell`.
@@ -315,6 +326,14 @@ struct R: Rswift.Validatable {
     static let gbrTableClientTableViewCell = _R.nib._GBRTableClientTableViewCell()
     /// Nib `GBRTablesCollectionViewCell`.
     static let gbrTablesCollectionViewCell = _R.nib._GBRTablesCollectionViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GBRDashboardCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gbrDashboardCollectionViewCell) instead")
+    static func gbrDashboardCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gbrDashboardCollectionViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "GBROrderProductsTableViewCell", in: bundle)`
@@ -347,6 +366,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.gbrTablesCollectionViewCell)
     }
     #endif
+
+    static func gbrDashboardCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBRDashboardCollectionViewCell? {
+      return R.nib.gbrDashboardCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBRDashboardCollectionViewCell
+    }
 
     static func gbrOrderProductsTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBROrderProductsTableViewCell? {
       return R.nib.gbrOrderProductsTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBROrderProductsTableViewCell
@@ -395,6 +418,17 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _GBRTableClientTableViewCell.validate()
       try _GBRTablesCollectionViewCell.validate()
+    }
+
+    struct _GBRDashboardCollectionViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GBRDashboardCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GBRDashboardCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GBRDashboardCollectionViewCell
+      }
+
+      fileprivate init() {}
     }
 
     struct _GBROrderProductsTableViewCell: Rswift.NibResourceType {
@@ -461,6 +495,9 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try dashboard.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -476,6 +513,23 @@ struct _R: Rswift.Validatable {
       try tables.validate()
       #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct dashboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+
+      let bundle = R.hostingBundle
+      let name = "Dashboard"
+
+      static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "doc.text.magnifyingglass") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'doc.text.magnifyingglass' is used in storyboard 'Dashboard', but couldn't be loaded.") } }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {

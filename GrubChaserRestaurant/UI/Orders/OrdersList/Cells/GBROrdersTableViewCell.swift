@@ -41,6 +41,8 @@ class GBROrdersTableViewCell: UITableViewCell {
             confirmButton.setTitle("Finalizar", for: .normal)
         case .finished:
             confirmButton.isHidden = true
+        case .closed:
+            break
         }
     }
     

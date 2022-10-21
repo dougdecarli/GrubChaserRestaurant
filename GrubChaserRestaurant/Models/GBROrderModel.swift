@@ -35,6 +35,7 @@ enum GBROrderStatus: String, Codable {
     case waitingConfirmation = "AGUARDANDO CONFIRMAÇÃO"
     case confirmed = "CONFIRMADO"
     case finished = "FINALIZADO"
+    case closed = "FECHADO"
 }
 
 extension GBROrderStatus {

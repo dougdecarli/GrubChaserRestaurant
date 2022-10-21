@@ -84,6 +84,14 @@
 		4BE67F3B28F3834F0082F6FC /* GBROrderProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F3928F3834F0082F6FC /* GBROrderProductsTableViewCell.swift */; };
 		4BE67F3C28F3834F0082F6FC /* GBROrderProductsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE67F3A28F3834F0082F6FC /* GBROrderProductsTableViewCell.xib */; };
 		4BE67F3F28F3875B0082F6FC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F3E28F3875B0082F6FC /* R.generated.swift */; };
+		4BFCB507290338A500D6E385 /* GBRDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB506290338A400D6E385 /* GBRDashboardViewController.swift */; };
+		4BFCB509290338C900D6E385 /* GBRDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB508290338C900D6E385 /* GBRDashboardViewModel.swift */; };
+		4BFCB50C290338ED00D6E385 /* GBRDashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB50B290338ED00D6E385 /* GBRDashboardRouter.swift */; };
+		4BFCB50E2903390500D6E385 /* GBRDashboardRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB50D2903390500D6E385 /* GBRDashboardRouterProtocol.swift */; };
+		4BFCB510290339FE00D6E385 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BFCB50F290339FE00D6E385 /* Dashboard.storyboard */; };
+		4BFCB51429033C6700D6E385 /* GBRDashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB51229033C6700D6E385 /* GBRDashboardCollectionViewCell.swift */; };
+		4BFCB51529033C6700D6E385 /* GBRDashboardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BFCB51329033C6700D6E385 /* GBRDashboardCollectionViewCell.xib */; };
+		4BFCB5172903411600D6E385 /* GBRDashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB5162903411600D6E385 /* GBRDashboardModel.swift */; };
 		6A5FD004C35E10076109CDBA /* Pods_GrubChaserRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +175,14 @@
 		4BE67F3928F3834F0082F6FC /* GBROrderProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBROrderProductsTableViewCell.swift; sourceTree = "<group>"; };
 		4BE67F3A28F3834F0082F6FC /* GBROrderProductsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GBROrderProductsTableViewCell.xib; sourceTree = "<group>"; };
 		4BE67F3E28F3875B0082F6FC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		4BFCB506290338A400D6E385 /* GBRDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardViewController.swift; sourceTree = "<group>"; };
+		4BFCB508290338C900D6E385 /* GBRDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardViewModel.swift; sourceTree = "<group>"; };
+		4BFCB50B290338ED00D6E385 /* GBRDashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardRouter.swift; sourceTree = "<group>"; };
+		4BFCB50D2903390500D6E385 /* GBRDashboardRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardRouterProtocol.swift; sourceTree = "<group>"; };
+		4BFCB50F290339FE00D6E385 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		4BFCB51229033C6700D6E385 /* GBRDashboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardCollectionViewCell.swift; sourceTree = "<group>"; };
+		4BFCB51329033C6700D6E385 /* GBRDashboardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GBRDashboardCollectionViewCell.xib; sourceTree = "<group>"; };
+		4BFCB5162903411600D6E385 /* GBRDashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardModel.swift; sourceTree = "<group>"; };
 		731A4B58C9A3B6B46181F923 /* Pods_GrubChaserRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrubChaserRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9690ECF1CC13B38308FE71B4 /* Pods-GrubChaserRestaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubChaserRestaurant.release.xcconfig"; path = "Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant.release.xcconfig"; sourceTree = "<group>"; };
 		E1A450828824E0F7A63571D5 /* Pods-GrubChaserRestaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrubChaserRestaurant.debug.xcconfig"; path = "Target Support Files/Pods-GrubChaserRestaurant/Pods-GrubChaserRestaurant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -311,6 +327,7 @@
 				4B6688AA28EE4A25006F5C84 /* Main Tab */,
 				4B6688AD28EE4A76006F5C84 /* Orders */,
 				4B6688AE28EE4A82006F5C84 /* Tables */,
+				4BFCB50529032FE900D6E385 /* Dashboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -344,6 +361,7 @@
 				4BE67F1828EF4C2D0082F6FC /* GBRProductBag.swift */,
 				4B4B301628F4A28F000B4176 /* GBRTableModel.swift */,
 				4B4B301828F4D335000B4176 /* GBRUserModel.swift */,
+				4BFCB5162903411600D6E385 /* GBRDashboardModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,6 +377,7 @@
 		4B4BAEAD28EBC550005F2B60 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4BFCB50A290338DD00D6E385 /* Dashboard */,
 				4B4B300C28F49C05000B4176 /* Tables */,
 				4BE67F0A28EF255C0082F6FC /* Orders */,
 				4B66888628ECAD4F006F5C84 /* LoginRouter */,
@@ -544,6 +563,35 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		4BFCB50529032FE900D6E385 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				4BFCB51129033C4800D6E385 /* Cell */,
+				4BFCB506290338A400D6E385 /* GBRDashboardViewController.swift */,
+				4BFCB508290338C900D6E385 /* GBRDashboardViewModel.swift */,
+				4BFCB50F290339FE00D6E385 /* Dashboard.storyboard */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		4BFCB50A290338DD00D6E385 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				4BFCB50B290338ED00D6E385 /* GBRDashboardRouter.swift */,
+				4BFCB50D2903390500D6E385 /* GBRDashboardRouterProtocol.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		4BFCB51129033C4800D6E385 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4BFCB51229033C6700D6E385 /* GBRDashboardCollectionViewCell.swift */,
+				4BFCB51329033C6700D6E385 /* GBRDashboardCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		927859E81644038519B667DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,10 +665,12 @@
 				4B6688B028EE4A9B006F5C84 /* Tables.storyboard in Resources */,
 				4B4BAE9F28EBC42C005F2B60 /* LaunchScreen.storyboard in Resources */,
 				4B4B301528F49DFC000B4176 /* GBRTablesCollectionViewCell.xib in Resources */,
+				4BFCB510290339FE00D6E385 /* Dashboard.storyboard in Resources */,
 				4B6688AC28EE4A72006F5C84 /* Orders.storyboard in Resources */,
 				4B4B302428F5F86A000B4176 /* GBRTableClientTableViewCell.xib in Resources */,
 				4BE67F3C28F3834F0082F6FC /* GBROrderProductsTableViewCell.xib in Resources */,
 				4B66885028ECAC71006F5C84 /* GoogleService-Info.plist in Resources */,
+				4BFCB51529033C6700D6E385 /* GBRDashboardCollectionViewCell.xib in Resources */,
 				4B4BAE9C28EBC42C005F2B60 /* Assets.xcassets in Resources */,
 				4B66888A28ECAEA1006F5C84 /* Login.storyboard in Resources */,
 				4BE67F2A28F232ED0082F6FC /* chau-philomene-one.regular.ttf in Resources */,
@@ -708,6 +758,8 @@
 				4B66887628ECACE3006F5C84 /* UIView+add.swift in Sources */,
 				4B4B302628F5F9CB000B4176 /* UIImageExtensions.swift in Sources */,
 				4BE67F3528F37F210082F6FC /* GBROrderDetailViewController.swift in Sources */,
+				4BFCB51429033C6700D6E385 /* GBRDashboardCollectionViewCell.swift in Sources */,
+				4BFCB5172903411600D6E385 /* GBRDashboardModel.swift in Sources */,
 				4B66889C28ECAF90006F5C84 /* GrubChaserViewModelProtocol.swift in Sources */,
 				4BE67F0C28EF25680082F6FC /* GBROrderRouter.swift in Sources */,
 				4B66888C28ECAF4E006F5C84 /* GBRLoginViewModel.swift in Sources */,
@@ -719,7 +771,9 @@
 				4B66888128ECACE3006F5C84 /* Reactive+UITableViewCell.swift in Sources */,
 				4B66887828ECACE3006F5C84 /* UIView+width.swift in Sources */,
 				4BE67F3728F37F3D0082F6FC /* GBROrderDetailViewModel.swift in Sources */,
+				4BFCB50E2903390500D6E385 /* GBRDashboardRouterProtocol.swift in Sources */,
 				4B0ADA8028F61DB5006120DD /* GBRClientOrdersViewController.swift in Sources */,
+				4BFCB50C290338ED00D6E385 /* GBRDashboardRouter.swift in Sources */,
 				4BE67F3F28F3875B0082F6FC /* R.generated.swift in Sources */,
 				4B6688A328ECB04D006F5C84 /* GBRServiceProtocol.swift in Sources */,
 				4B6688A728ECC801006F5C84 /* GBRRestaurantLoggedModel.swift in Sources */,
@@ -739,6 +793,7 @@
 				4B66887C28ECACE3006F5C84 /* UIViewExtensions.swift in Sources */,
 				4B4B300B28F49BF4000B4176 /* GBRTablesViewModel.swift in Sources */,
 				4B66889B28ECAF90006F5C84 /* GrubChaserAlertableViewModel.swift in Sources */,
+				4BFCB507290338A500D6E385 /* GBRDashboardViewController.swift in Sources */,
 				4B4B301428F49DFC000B4176 /* GBRTablesCollectionViewCell.swift in Sources */,
 				4B66887028ECACE3006F5C84 /* UIView+centerY.swift in Sources */,
 				4BE67F1728EF4BFB0082F6FC /* GBROrderModel.swift in Sources */,
@@ -748,6 +803,7 @@
 				4BE67F0728EF25370082F6FC /* GBROrdersViewModel.swift in Sources */,
 				4B66889D28ECAF90006F5C84 /* GrubChaserLoadableViewModel.swift in Sources */,
 				4B66889F28ECAF90006F5C84 /* GrubChaserUIAlertView.swift in Sources */,
+				4BFCB509290338C900D6E385 /* GBRDashboardViewModel.swift in Sources */,
 				4B66886E28ECACE3006F5C84 /* EncodableExtension.swift in Sources */,
 				4BE67F0E28EF259D0082F6FC /* GBROrdersRouterProtocol.swift in Sources */,
 				4B66888328ECACE3006F5C84 /* UIButton+Rx.swift in Sources */,

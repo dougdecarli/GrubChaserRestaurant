@@ -71,6 +71,8 @@ class GBROrderDetailViewController: GrubChaserBaseViewController<GBROrderDetailV
             confirmOrderButton.setTitle("Finalizar", for: .normal)
         case .finished:
             confirmOrderButton.isHidden = true
+        case .closed:
+            break
         }
     }
     

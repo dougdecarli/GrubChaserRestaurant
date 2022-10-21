@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GBRDashboardCollectionViewCell" customModule="GrubChaserRestaurant" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="107" height="152"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="107" height="152"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyE-rX-MN5">
+                        <rect key="frame" x="0.0" y="0.0" width="107" height="152"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uyu-2f-gaE">
+                                <rect key="frame" x="3.6666666666666643" y="50.666666666666671" width="99.666666666666686" height="50.666666666666671"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clientes agora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM8-40-wrP">
+                                        <rect key="frame" x="0.0" y="0.0" width="99.666666666666671" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v64-ZL-8hu">
+                                        <rect key="frame" x="42.333333333333336" y="22.000000000000007" width="15.333333333333336" height="28.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.41568627450000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Uyu-2f-gaE" firstAttribute="centerX" secondItem="qyE-rX-MN5" secondAttribute="centerX" id="CGa-V2-MiW"/>
+                            <constraint firstItem="Uyu-2f-gaE" firstAttribute="centerY" secondItem="qyE-rX-MN5" secondAttribute="centerY" id="PRu-yn-eCS"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qyE-rX-MN5" secondAttribute="trailing" id="D7J-4I-iQM"/>
+                <constraint firstAttribute="bottom" secondItem="qyE-rX-MN5" secondAttribute="bottom" id="Gyv-jJ-dbK"/>
+                <constraint firstItem="qyE-rX-MN5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QZB-c2-K1u"/>
+                <constraint firstItem="qyE-rX-MN5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="aeb-U7-AJ0"/>
+            </constraints>
+            <size key="customSize" width="107" height="152"/>
+            <connections>
+                <outlet property="containerView" destination="qyE-rX-MN5" id="7JQ-m1-qkL"/>
+                <outlet property="titleLabel" destination="pM8-40-wrP" id="YO3-Yd-TnF"/>
+                <outlet property="valueLabel" destination="v64-ZL-8hu" id="H7o-dd-nOf"/>
+            </connections>
+            <point key="canvasLocation" x="133.07692307692307" y="54.739336492890992"/>
+        </collectionViewCell>
+    </objects>
+</document>

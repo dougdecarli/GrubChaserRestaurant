@@ -88,6 +88,23 @@ class GBRService: GBRServiceProtocol {
             }
     }
     
+    func getTodaysNumberOfOrders() -> Observable<Int> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .rx
+            .getDocuments()
+            .decode(GBROrderModel.self)
+            .flatMap { orders -> Observable<Int> in
+                Observable.just(orders
+                    .map(\.timestamp)
+                    .map { Date(timeIntervalSince1970: $0) }
+                    .filter { Calendar.current.isDateInToday($0) }.count
+                )
+            }
+    }
+    
     func getClientOrders(from tableId: String,
                          and userId: String) -> Observable<[GBROrderModel]> {
         dbFirestore
@@ -100,6 +117,25 @@ class GBRService: GBRServiceProtocol {
             .rx
             .getDocuments()
             .decode(GBROrderModel.self)
+    }
+    
+    func getTodaysRevenue() -> Observable<Double> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .rx
+            .getDocuments()
+            .decode(GBROrderModel.self)
+            .flatMap { orders -> Observable<Double> in
+                Observable.just(orders
+                    .map(\.products)
+                    .flatMap { products -> [Double] in
+                        products
+                            .map { $0.product.price * Double($0.quantity) }
+                    }.reduce(0, +)
+                )
+            }
     }
     
     //MARK: - Tables
@@ -145,5 +181,19 @@ class GBRService: GBRServiceProtocol {
             .document(tableId)
             .rx
             .updateData(["clients": FieldValue.arrayRemove([client.toDictionary!])])
+    }
+    
+    //MARK: - Clients
+    func getNumberOfActiveClients() -> Observable<Int> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("tables")
+            .rx
+            .getDocuments()
+            .decode(GBRTableModel.self)
+            .flatMap { tables -> Observable<Int> in
+                Observable.just(tables.filter { $0.clients?.count ?? 0 > 0 }.count)
+            }
     }
 }

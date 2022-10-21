@@ -12,11 +12,11 @@ protocol GrubChaserLoadableViewModel {
 }
 
 extension GrubChaserLoadableViewModel {
-    func startLoader() {
+    func startLoader(_: Any? = nil) {
         isLoaderShowing.onNext(true)
     }
     
-    func stopLoader() {
+    func stopLoader(_: Any? = nil) {
         isLoaderShowing.onNext(false)
     }
 }

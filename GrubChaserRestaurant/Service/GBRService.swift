@@ -88,7 +88,7 @@ class GBRService: GBRServiceProtocol {
             }
     }
     
-    func getTodaysNumberOfOrders() -> Observable<Int> {
+    func getNumberOfOrdersByTodayWeeklyAndMonthly() -> Observable<(Int, Int, Int)> {
         dbFirestore
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
@@ -96,12 +96,23 @@ class GBRService: GBRServiceProtocol {
             .rx
             .getDocuments()
             .decode(GBROrderModel.self)
-            .flatMap { orders -> Observable<Int> in
-                Observable.just(orders
+            .flatMap { orders -> Observable<(Int, Int, Int)> in
+                let todaysOrders = orders
                     .map(\.timestamp)
                     .map { Date(timeIntervalSince1970: $0) }
                     .filter { Calendar.current.isDateInToday($0) }.count
-                )
+                
+                let weeklyOrders = orders
+                    .map(\.timestamp)
+                    .map { Date(timeIntervalSince1970: $0) }
+                    .filter { Calendar.current.isDateInThisWeek($0) }.count
+                 
+                let monthlyOrders = orders
+                    .map(\.timestamp)
+                    .map { Date(timeIntervalSince1970: $0) }
+                    .filter { Calendar.current.isDateInThisMonth($0) }.count
+                
+                return Observable.just((todaysOrders, weeklyOrders, monthlyOrders))
             }
     }
     
@@ -119,7 +130,7 @@ class GBRService: GBRServiceProtocol {
             .decode(GBROrderModel.self)
     }
     
-    func getTodaysRevenue() -> Observable<Double> {
+    func getTodaysRevenue() -> Observable<(Double, Double, Double)> {
         dbFirestore
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
@@ -127,14 +138,32 @@ class GBRService: GBRServiceProtocol {
             .rx
             .getDocuments()
             .decode(GBROrderModel.self)
-            .flatMap { orders -> Observable<Double> in
-                Observable.just(orders
+            .flatMap { orders -> Observable<(Double, Double, Double)> in
+                let todaysRevenue: Double = orders
+                    .filter { Calendar.current.isDateInToday(Date(timeIntervalSince1970: $0.timestamp)) }
                     .map(\.products)
                     .flatMap { products -> [Double] in
                         products
                             .map { $0.product.price * Double($0.quantity) }
                     }.reduce(0, +)
-                )
+                
+                let weeklyRevenue: Double = orders
+                    .filter { Calendar.current.isDateInThisWeek(Date(timeIntervalSince1970: $0.timestamp)) }
+                    .map(\.products)
+                    .flatMap { products -> [Double] in
+                        products
+                            .map { $0.product.price * Double($0.quantity) }
+                    }.reduce(0, +)
+                
+                let monthlyRevenue: Double = orders
+                    .filter { Calendar.current.isDateInThisMonth(Date(timeIntervalSince1970: $0.timestamp)) }
+                    .map(\.products)
+                    .flatMap { products -> [Double] in
+                        products
+                            .map { $0.product.price * Double($0.quantity) }
+                    }.reduce(0, +)
+                
+                return Observable.just((todaysRevenue, weeklyRevenue, monthlyRevenue))
             }
     }
     

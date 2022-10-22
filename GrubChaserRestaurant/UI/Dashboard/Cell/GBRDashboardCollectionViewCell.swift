@@ -18,10 +18,24 @@ class GBRDashboardCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel.text = ""
+        valueLabel.text = ""
     }
 
     func bind(dashboardModel: GBRDashboardModel) {
         titleLabel.text = dashboardModel.title
         valueLabel.text = dashboardModel.value
+        setCellDesign(type: dashboardModel.type)
+    }
+    
+    private func setCellDesign(type: GBRDashboardModel.GBRDashboardType) {
+        switch type {
+        case .realtime:
+            break
+        case .orders:
+            break
+        case .revenue:
+            break
+        }
     }
 }

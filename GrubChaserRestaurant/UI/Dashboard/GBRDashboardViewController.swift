@@ -12,9 +12,9 @@ import RxDataSources
 class GBRDashboardViewController: GrubChaserBaseViewController<GBRDashboardViewModel> {
     @IBOutlet weak var dashboardCollectionView: UICollectionView!
     
-    typealias DashboardSectionModel = AnimatableSectionModel<String, GBRDashboardModel>
-    typealias DashboardDataSource = RxCollectionViewSectionedAnimatedDataSource<DashboardSectionModel>
-    private let dataSource = DashboardDataSource(animationConfiguration: .init(insertAnimation: .automatic)) { dataSource, collectionView, indexPath, item in
+    typealias DashboardSectionModel = SectionModel<String, GBRDashboardModel>
+    typealias DashboardDataSource = RxCollectionViewSectionedReloadDataSource<DashboardSectionModel>
+    private let dataSource = DashboardDataSource { dataSource, collectionView, indexPath, item in
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GBRDashboardCollectionViewCell.identifier,
                                                          for: indexPath) as? GBRDashboardCollectionViewCell {
             cell.bind(dashboardModel: item)

@@ -84,6 +84,7 @@
 		4BE67F3B28F3834F0082F6FC /* GBROrderProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F3928F3834F0082F6FC /* GBROrderProductsTableViewCell.swift */; };
 		4BE67F3C28F3834F0082F6FC /* GBROrderProductsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE67F3A28F3834F0082F6FC /* GBROrderProductsTableViewCell.xib */; };
 		4BE67F3F28F3875B0082F6FC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE67F3E28F3875B0082F6FC /* R.generated.swift */; };
+		4BF1BD8229036B0B00642EBE /* CallendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF1BD8129036B0B00642EBE /* CallendarExtensions.swift */; };
 		4BFCB507290338A500D6E385 /* GBRDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB506290338A400D6E385 /* GBRDashboardViewController.swift */; };
 		4BFCB509290338C900D6E385 /* GBRDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB508290338C900D6E385 /* GBRDashboardViewModel.swift */; };
 		4BFCB50C290338ED00D6E385 /* GBRDashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFCB50B290338ED00D6E385 /* GBRDashboardRouter.swift */; };
@@ -175,6 +176,7 @@
 		4BE67F3928F3834F0082F6FC /* GBROrderProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBROrderProductsTableViewCell.swift; sourceTree = "<group>"; };
 		4BE67F3A28F3834F0082F6FC /* GBROrderProductsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GBROrderProductsTableViewCell.xib; sourceTree = "<group>"; };
 		4BE67F3E28F3875B0082F6FC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		4BF1BD8129036B0B00642EBE /* CallendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallendarExtensions.swift; sourceTree = "<group>"; };
 		4BFCB506290338A400D6E385 /* GBRDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardViewController.swift; sourceTree = "<group>"; };
 		4BFCB508290338C900D6E385 /* GBRDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardViewModel.swift; sourceTree = "<group>"; };
 		4BFCB50B290338ED00D6E385 /* GBRDashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRDashboardRouter.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				4B66886728ECACE3006F5C84 /* DateExtension.swift */,
 				4B66886828ECACE3006F5C84 /* Rx */,
 				4B4B302528F5F9CB000B4176 /* UIImageExtensions.swift */,
+				4BF1BD8129036B0B00642EBE /* CallendarExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				4B0ADA8228F61DE7006120DD /* GBRClientOrdersViewModel.swift in Sources */,
 				4B66888228ECACE3006F5C84 /* Reactive+FirestoreQuery.swift in Sources */,
 				4B66888E28ECAF5B006F5C84 /* GBRLoginViewController.swift in Sources */,
+				4BF1BD8229036B0B00642EBE /* CallendarExtensions.swift in Sources */,
 				4B4B301028F49C1C000B4176 /* GBRTablesRouterProtocol.swift in Sources */,
 				4B66887C28ECACE3006F5C84 /* UIViewExtensions.swift in Sources */,
 				4B4B300B28F49BF4000B4176 /* GBRTablesViewModel.swift in Sources */,

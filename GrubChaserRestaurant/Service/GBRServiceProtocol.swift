@@ -20,6 +20,7 @@ protocol GBRServiceProtocol {
                       and client: GBRUserModel) -> Observable<Void>
     func getClientOrders(from tableId: String,
                          and userId: String) -> Observable<[GBROrderModel]>
-    func getTodaysRevenue() -> Observable<Double>
+    func getTodaysRevenue() -> Observable<(Double, Double, Double)>
     func getNumberOfActiveClients() -> Observable<Int>
+    func getNumberOfOrdersByTodayWeeklyAndMonthly() -> Observable<(Int, Int, Int)>
 }

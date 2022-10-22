@@ -21,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="107" height="152"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uyu-2f-gaE">
-                                <rect key="frame" x="3.6666666666666643" y="50.666666666666671" width="99.666666666666686" height="50.666666666666671"/>
+                                <rect key="frame" x="2" y="50.666666666666671" width="103" height="50.666666666666671"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clientes agora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM8-40-wrP">
-                                        <rect key="frame" x="0.0" y="0.0" width="99.666666666666671" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clientes agora" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM8-40-wrP">
+                                        <rect key="frame" x="1.6666666666666643" y="0.0" width="99.666666666666686" height="17"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v64-ZL-8hu">
-                                        <rect key="frame" x="42.333333333333336" y="22.000000000000007" width="15.333333333333336" height="28.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v64-ZL-8hu">
+                                        <rect key="frame" x="44" y="22.000000000000007" width="15.333333333333336" height="28.666666666666664"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -40,8 +40,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.41568627450000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Uyu-2f-gaE" firstAttribute="centerX" secondItem="qyE-rX-MN5" secondAttribute="centerX" id="CGa-V2-MiW"/>
-                            <constraint firstItem="Uyu-2f-gaE" firstAttribute="centerY" secondItem="qyE-rX-MN5" secondAttribute="centerY" id="PRu-yn-eCS"/>
+                            <constraint firstItem="Uyu-2f-gaE" firstAttribute="leading" secondItem="qyE-rX-MN5" secondAttribute="leading" constant="2" id="I6C-vq-1qu"/>
+                            <constraint firstAttribute="trailing" secondItem="Uyu-2f-gaE" secondAttribute="trailing" constant="2" id="ZN9-V0-2HP"/>
+                            <constraint firstItem="Uyu-2f-gaE" firstAttribute="centerY" secondItem="qyE-rX-MN5" secondAttribute="centerY" id="ocs-ld-t9s"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

@@ -7,7 +7,7 @@
 
 import Differentiator
 
-struct GBRDashboardModel: Codable, Equatable, IdentifiableType {
+struct GBRDashboardModel: Equatable, IdentifiableType {
     static func == (lhs: GBRDashboardModel, rhs: GBRDashboardModel) -> Bool {
         if lhs.identity == rhs.identity {
             return true
@@ -22,4 +22,13 @@ struct GBRDashboardModel: Codable, Equatable, IdentifiableType {
     
     let title: String
     let value: String
+    let type: GBRDashboardType
+    
+    enum GBRDashboardType {
+        case realtime
+        case orders
+        case revenue
+    }
 }
+
+

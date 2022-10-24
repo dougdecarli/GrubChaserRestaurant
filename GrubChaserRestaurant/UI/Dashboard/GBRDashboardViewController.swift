@@ -59,7 +59,7 @@ class GBRDashboardViewController: GrubChaserBaseViewController<GBRDashboardViewM
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 3
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width / 3) - 3,
-                                 height: (UIScreen.main.bounds.height / 5 ) - 3)
+                                 height: (UIScreen.main.bounds.height / 4.5) - 3)
         dashboardCollectionView.collectionViewLayout = layout
         
         dashboardCollectionView.register(UINib(nibName: GBRDashboardCollectionViewCell.nibName,

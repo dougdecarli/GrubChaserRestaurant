@@ -20,6 +20,7 @@ class GBRDashboardCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         titleLabel.text = ""
         valueLabel.text = ""
+        containerView.backgroundColor = nil
     }
 
     func bind(dashboardModel: GBRDashboardModel) {
@@ -31,11 +32,11 @@ class GBRDashboardCollectionViewCell: UICollectionViewCell {
     private func setCellDesign(type: GBRDashboardModel.GBRDashboardType) {
         switch type {
         case .realtime:
-            break
+            containerView.backgroundColor = ColorPallete.defaultRed.withAlphaComponent(0.8)
         case .orders:
-            break
+            containerView.backgroundColor = ColorPallete.defaultRed.withAlphaComponent(0.6)
         case .revenue:
-            break
+            containerView.backgroundColor = ColorPallete.defaultRed.withAlphaComponent(0.4)
         }
     }
 }

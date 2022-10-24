@@ -13,6 +13,10 @@ class ColorPallete {
     static var defaultRed = UIColor(hexString: "#EE6A53")
     static var defaultYellow = UIColor(hexString: "#FFD60A")
     static var defaultGray = UIColor(hexString: "#F5F5F5")
+    
+    static var realtimeTypeColor = UIColor(hexString: "#83D9DC")
+    static var ordersTypeColor = UIColor(hexString: "#F498C2")
+    static var revenueTypeColor = UIColor(hexString: "#FEFFBF")
 }
 
 public extension UIColor {

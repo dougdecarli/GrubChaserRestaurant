@@ -35,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kN6-A0-oAG">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kN6-A0-oAG">
                                 <rect key="frame" x="0.0" y="146" width="390" height="664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NPX-Tx-F64">
@@ -79,7 +79,7 @@
                             <constraint firstItem="kN6-A0-oAG" firstAttribute="top" secondItem="VJU-qy-GYf" secondAttribute="bottom" constant="10" id="zZq-bL-sYe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mesas" largeTitleDisplayMode="always" id="h4W-SW-rDx"/>
+                    <navigationItem key="navigationItem" title="Mesas" largeTitleDisplayMode="never" id="h4W-SW-rDx"/>
                     <connections>
                         <outlet property="tablesCollectionView" destination="kN6-A0-oAG" id="Kzd-It-jnb"/>
                         <outlet property="tablesSegmentedControl" destination="VJU-qy-GYf" id="Xve-bl-LQd"/>

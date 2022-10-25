@@ -25,6 +25,11 @@ class GBRTablesViewController: GrubChaserBaseViewController<GBRTablesViewModel> 
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = GBRTablesViewModel(router: GBRTablesRouter(navigationController: navigationController ?? UINavigationController()),

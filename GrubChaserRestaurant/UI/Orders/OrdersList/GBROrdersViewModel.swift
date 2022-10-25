@@ -55,6 +55,7 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
         setupOnConfirmButtonTouched()
         setupOnOrderTouched()
         setupOnSegmentedOrderSelected()
+        observeOrdersFromStatus()
     }
     
     //MARK: Inputs
@@ -159,14 +160,16 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
     }
     
     private func observeOrders() {
+        _ = service.listenToOrders()
+            .subscribe(onNext: getAllRestaurantOrders)
+    }
+    
+    private func observeOrdersFromStatus() {
         service.listenToOrders()
             .withLatestFrom(onSegmentedOrderSelected)
             .map { GBROrderStatus($0.rawValue) }
             .subscribe(onNext: getRestaurantOrders)
             .disposed(by: disposeBag)
-            
-        _ = service.listenToOrders()
-            .subscribe(onNext: getAllRestaurantOrders)
     }
     
     //MARK: - Helper methods

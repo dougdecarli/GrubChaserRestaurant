@@ -36,7 +36,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gHq-EU-Ys6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gHq-EU-Ys6">
                                 <rect key="frame" x="0.0" y="188" width="390" height="622"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" red="0.93333333330000001" green="0.41568627450000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,7 +57,6 @@
                         <viewLayoutGuide key="safeArea" id="qGp-rk-EUU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qta-xk-eiS" firstAttribute="top" secondItem="qGp-rk-EUU" secondAttribute="top" id="Fp1-8Z-swa"/>
                             <constraint firstItem="gHq-EU-Ys6" firstAttribute="leading" secondItem="qGp-rk-EUU" secondAttribute="leading" id="LAM-1Y-Lt2"/>
                             <constraint firstItem="gHq-EU-Ys6" firstAttribute="leading" secondItem="qGp-rk-EUU" secondAttribute="leading" id="QmV-Nc-rHG"/>
                             <constraint firstItem="gHq-EU-Ys6" firstAttribute="trailing" secondItem="qGp-rk-EUU" secondAttribute="trailing" id="Sci-uT-poQ"/>
@@ -68,6 +67,7 @@
                             <constraint firstItem="qta-xk-eiS" firstAttribute="trailing" secondItem="qGp-rk-EUU" secondAttribute="trailing" id="YJz-Tq-wL1"/>
                             <constraint firstItem="gHq-EU-Ys6" firstAttribute="top" secondItem="qta-xk-eiS" secondAttribute="bottom" id="YTV-7L-7jc"/>
                             <constraint firstItem="gHq-EU-Ys6" firstAttribute="top" secondItem="qta-xk-eiS" secondAttribute="bottom" id="cQm-KC-JxO"/>
+                            <constraint firstItem="qta-xk-eiS" firstAttribute="top" secondItem="qGp-rk-EUU" secondAttribute="top" id="px1-tq-r7R"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pedidos" largeTitleDisplayMode="always" id="raa-8F-beI"/>

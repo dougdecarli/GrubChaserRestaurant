@@ -8,6 +8,7 @@
 import RxSwift
 
 protocol GBRServiceProtocol {
+    func getAllRestaurantOrders() -> Observable<[GBROrderModel]>
     func getRestaurant(with restaurantUid: String) -> Observable<GBRRestaurantModel>
     func getRestaurantOrders(from status: GBROrderStatus) -> Observable<[GBROrderModel]>
     func putOrderStatus(_ orderId: String,

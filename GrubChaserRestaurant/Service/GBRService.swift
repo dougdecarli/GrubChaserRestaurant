@@ -33,6 +33,16 @@ class GBRService: GBRServiceProtocol {
     }
     
     //MARK: - Orders
+    func getAllRestaurantOrders() -> Observable<[GBROrderModel]> {
+        dbFirestore
+            .collection("restaurants")
+            .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
+            .collection("orders")
+            .rx
+            .getDocuments()
+            .decode(GBROrderModel.self)
+    }
+    
     func getRestaurantOrders(from status: GBROrderStatus) -> Observable<[GBROrderModel]> {
         dbFirestore
             .collection("restaurants")
@@ -93,6 +103,7 @@ class GBRService: GBRServiceProtocol {
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
             .collection("orders")
+            .whereField("status", isEqualTo: GBROrderStatus.closed.rawValue)
             .rx
             .getDocuments()
             .decode(GBROrderModel.self)
@@ -135,6 +146,7 @@ class GBRService: GBRServiceProtocol {
             .collection("restaurants")
             .document(UserDefaults.standard.getLoggedUser()?.id ?? "")
             .collection("orders")
+            .whereField("status", isEqualTo: GBROrderStatus.closed.rawValue)
             .rx
             .getDocuments()
             .decode(GBROrderModel.self)

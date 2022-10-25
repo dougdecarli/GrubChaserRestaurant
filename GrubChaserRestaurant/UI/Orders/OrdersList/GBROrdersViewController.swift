@@ -69,6 +69,19 @@ class GBROrdersViewController: GrubChaserBaseViewController<GBROrdersViewModel> 
             }
             .bind(to: newOrdersTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        viewModel
+            .setSelectedSegmentedOrder
+            .map(\.rawValue)
+            .bind(to: ordersSegmentedControl.rx.selectedSegmentIndex)
+            .disposed(by: disposeBag)
+        
+        viewModel
+            .tabBarBadgeValue
+            .bind(to: navigationController!.tabBarItem.rx.badgeValue)
+            .disposed(by: disposeBag)
+        
+        
     }
     
     private func setupOnConfirmButtonTouched(cell: GBROrdersTableViewCell,

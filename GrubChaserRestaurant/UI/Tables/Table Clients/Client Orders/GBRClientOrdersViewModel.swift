@@ -62,14 +62,16 @@ class GBRClientOrdersViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol>
             orderProductsBag.accept([])
             totalPrice.accept(0)
             orders.forEach { order in
-                orderProductsBag.accept(orderProductsBag.value +
-                                         [.init(model: "\(Date.getDateFormatter(timestamp: order.timestamp)) - \(order.status.rawValue)",
-                                                items: order.products)])
-                var price: Double = 0
-                order.products.forEach { productBag in
-                    price += productBag.product.price * Double(productBag.quantity)
+                if order.status != GBROrderStatus.closed {
+                    orderProductsBag.accept(orderProductsBag.value +
+                                            [.init(model: "\(Date.getDateFormatter(timestamp: order.timestamp)) - \(order.status.rawValue)",
+                                                   items: order.products)])
+                    var price: Double = 0
+                    order.products.forEach { productBag in
+                        price += productBag.product.price * Double(productBag.quantity)
+                    }
+                    totalPrice.accept(totalPrice.value + price)
                 }
-                totalPrice.accept(totalPrice.value + price)
             }
         }
         

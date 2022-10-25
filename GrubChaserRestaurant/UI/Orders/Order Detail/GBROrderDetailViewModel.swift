@@ -28,7 +28,7 @@ class GBROrderDetailViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> 
     
     let order: GBROrderModel,
         onConfirmOrderButtonTouched = PublishRelay<Void>(),
-        onOrderConfirmedSuccess = PublishRelay<Void>()
+        onOrderConfirmedSuccess = PublishRelay<GBROrderStatus>()
     
     internal var showAlert = PublishSubject<ShowAlertModel>(),
                  isLoaderShowing = PublishSubject<Bool>()
@@ -62,7 +62,7 @@ class GBROrderDetailViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> 
                                 _ status: GBROrderStatus) {
         func handleSuccess() {
             stopLoading()
-            onOrderConfirmedSuccess.accept(())
+            onOrderConfirmedSuccess.accept(status)
         }
         
         func handleError(_: Error) {

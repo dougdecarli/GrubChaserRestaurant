@@ -80,7 +80,16 @@ class GBROrderDetailViewController: GrubChaserBaseViewController<GBROrderDetailV
         tableView.register(UINib(nibName: GBROrderProductsTableViewCell.nibName, bundle: .main), forCellReuseIdentifier: GBROrderProductsTableViewCell.identifier)
     }
     
-    private func dismissAfterConfirmationSuccess() {
+    private func dismissAfterConfirmationSuccess(_ status: GBROrderStatus) {
+        guard let tabBar = presentingViewController as? UITabBarController,
+              let ordersNavBar = tabBar.viewControllers![0] as? UINavigationController,
+              let presenter = ordersNavBar.topViewController as? GBROrdersViewController
+        else {
+            dismiss(animated: true)
+            return
+        }
+        presenter.viewModel.setSelectedSegmentedOrder.accept(OrdersSegmented(status == .confirmed ? 1 : 2))
+        presenter.viewModel.onSegmentedOrderSelected.accept(OrdersSegmented(status == .confirmed ? 1 : 2))
         dismiss(animated: true)
     }
 }

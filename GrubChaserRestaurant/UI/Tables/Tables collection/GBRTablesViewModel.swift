@@ -119,11 +119,12 @@ class GBRTablesViewModel: GrubChaserBaseViewModel<GBRTablesRouterProtocol> {
     
     //MARK: - Navigation
     private func presentClientsTable(table: GBRTableModel) {
-        guard let _ = table.clients?.count else {
+        if let clients = table.clients,
+           clients.count > 0 {
+            router.presentTableClients(table: table)
+        } else {
             showAlert.onNext(getAlertConfirmOrderErrorModel(tableName: table.name))
-            return
         }
-        router.presentTableClients(table: table)
     }
     
     private func getAlertConfirmOrderErrorModel(tableName: String) -> ShowAlertModel {

@@ -40,14 +40,20 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
     let onViewWillAppear = PublishRelay<Void>(),
         onConfirmButtonTouched = PublishRelay<GBROrderModel>(),
         onOrderTouched = PublishRelay<GBROrderModel>(),
-        onSegmentedOrderSelected = BehaviorRelay<OrdersSegmented>(value: .newOrders)
+        onSegmentedOrderSelected = BehaviorRelay<OrdersSegmented>(value: .newOrders),
+        setSelectedSegmentedOrder = PublishRelay<OrdersSegmented>(),
+        tabBarBadgeValue = PublishRelay<String?>()
+    
+    override init(router: GBROrdersRouterProtocol, viewControllerRef: UIViewController) {
+        super.init(router: router, viewControllerRef: viewControllerRef)
+        observeOrders()
+    }
     
     override func setupBindings() {
         super.setupBindings()
         setupOnViewWillAppear()
         setupOnConfirmButtonTouched()
         setupOnOrderTouched()
-        observeOrders()
         setupOnSegmentedOrderSelected()
     }
     
@@ -57,7 +63,7 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
             .do(onNext: startLoading(_:))
             .withLatestFrom(onSegmentedOrderSelected)
             .map { GBROrderStatus($0.rawValue) }
-            .subscribe(onNext: getRestaurantNewOrders)
+            .subscribe(onNext: getRestaurantOrders)
             .disposed(by: disposeBag)
     }
     
@@ -83,12 +89,12 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
             .do(onNext: startLoading)
             .do(onNext: eraseCells)
             .map { GBROrderStatus($0.rawValue) }
-            .subscribe(onNext: getRestaurantNewOrders)
+            .subscribe(onNext: getRestaurantOrders)
             .disposed(by: disposeBag)
     }
     
     //MARK: Service
-    private func getRestaurantNewOrders(status: GBROrderStatus) {
+    private func getRestaurantOrders(from status: GBROrderStatus) {
         func handleSuccess(_ ordersModel: [GBROrderModel]) {
             stopLoading()
             orders.accept(ordersModel)
@@ -109,10 +115,35 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
             .disposed(by: disposeBag)
     }
     
+    private func getAllRestaurantOrders() {
+        func handleSuccess(_ ordersModel: [GBROrderModel]) {
+            stopLoading()
+            let waitingConfirmationOrders = ordersModel.filter { $0.status == .waitingConfirmation }.count
+            tabBarBadgeValue.accept(waitingConfirmationOrders > 0 ? String(waitingConfirmationOrders) : nil)
+        }
+        
+        func handleError(error: Error) {
+            stopLoading()
+            if error is DecodableErrorType {
+                orders.accept([])
+                return
+            }
+            showAlert.onNext(getAlertErrorModel())
+        }
+        
+        service.getAllRestaurantOrders()
+            .subscribe(onNext: handleSuccess(_:),
+                       onError: handleError)
+            .disposed(by: disposeBag)
+    }
+    
     private func putOrderStatus(orderId: String,
                                 _ status: GBROrderStatus) {
         func handleSuccess() {
             stopLoading()
+            eraseCells()
+            setSelectedSegmentedOrder.accept(OrdersSegmented(status == .confirmed ? 1 : 2))
+            getRestaurantOrders(from: status)
         }
         
         func handleError(_: Error) {
@@ -131,8 +162,11 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
         service.listenToOrders()
             .withLatestFrom(onSegmentedOrderSelected)
             .map { GBROrderStatus($0.rawValue) }
-            .subscribe(onNext: getRestaurantNewOrders)
+            .subscribe(onNext: getRestaurantOrders)
             .disposed(by: disposeBag)
+            
+        _ = service.listenToOrders()
+            .subscribe(onNext: getAllRestaurantOrders)
     }
     
     //MARK: - Helper methods
@@ -144,7 +178,7 @@ class GBROrdersViewModel: GrubChaserBaseViewModel<GBROrdersRouterProtocol> {
         }
     }
     
-    private func eraseCells(_: Any?) {
+    private func eraseCells(_: Any? = nil) {
         orders.accept([])
     }
     

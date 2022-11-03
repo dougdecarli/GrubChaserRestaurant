@@ -234,7 +234,13 @@ class GBRService: GBRServiceProtocol {
             .getDocuments()
             .decode(GBRTableModel.self)
             .flatMap { tables -> Observable<Int> in
-                Observable.just(tables.filter { $0.clients?.count ?? 0 > 0 }.count)
+                Observable.just(
+                    tables
+                        .filter { $0.clients?.count ?? 0 > 0 }
+                        .reduce(into: 0, { partialResult, table in
+                            partialResult += table.clients?.count ?? 0
+                        })
+                )
             }
     }
 }

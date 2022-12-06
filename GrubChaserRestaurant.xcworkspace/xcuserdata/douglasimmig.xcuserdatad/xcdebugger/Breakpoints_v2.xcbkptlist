@@ -3,4 +3,70 @@
    uuid = "41F87119-E629-4193-B73A-C7FF86BAAB77"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E14B106-7F0B-4E3D-80D1-27699C2EA6B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/RxFirebaseFirestore/Sources/Firestore/FIRCollectionReference+Rx.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "addDocument(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24F150D5-793F-48D8-AE08-5BF8BAAAF3FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/RxFirebaseFirestore/Sources/Firestore/FIRCollectionReference+Rx.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "addDocument(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "24F150D5-793F-48D8-AE08-5BF8BAAAF3FF - aa78acbbfd8fe8d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RxSwift.AnyObserver&lt;__C.FIRDocumentReference&gt;) -&gt; RxSwift.Disposable in RxSwift.Reactive&lt;&#x3c4;_0_0 where &#x3c4;_0_0: __C.FIRCollectionReference&gt;.addDocument(data: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; RxSwift.Observable&lt;__C.FIRDocumentReference&gt;"
+                  moduleName = "GrubChaserRestaurant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/douglasimmig/Desktop/GrubChaserRestaurant/GrubChaserRestaurant/Pods/RxFirebaseFirestore/Sources/Firestore/FIRCollectionReference+Rx.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "158">
+               </Location>
+               <Location
+                  uuid = "24F150D5-793F-48D8-AE08-5BF8BAAAF3FF - 3cefc342a7f5a039"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (RxSwift.AnyObserver&lt;__C.FIRDocumentReference&gt;) -&gt; RxSwift.Disposable in RxSwift.Reactive&lt;&#x3c4;_0_0 where &#x3c4;_0_0: __C.FIRCollectionReference&gt;.addDocument(data: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; RxSwift.Observable&lt;__C.FIRDocumentReference&gt;"
+                  moduleName = "GrubChaserRestaurant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/douglasimmig/Desktop/GrubChaserRestaurant/GrubChaserRestaurant/Pods/RxFirebaseFirestore/Sources/Firestore/FIRCollectionReference+Rx.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "161">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

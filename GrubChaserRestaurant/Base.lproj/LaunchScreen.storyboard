@@ -18,6 +18,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grub-chaser-parceiro" translatesAutoresizingMaskIntoConstraints="NO" id="Ryv-Pu-fUZ">
                                 <rect key="frame" x="15" y="326.66666666666669" width="360" height="204.00000000000006"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="204" id="FgP-YF-TVI"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="wNW-ai-7xb"/>
@@ -25,7 +26,8 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.93333333330000001" green="0.41568627450000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95390182729999995" green="0.49992108349999997" blue="0.3960773051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.93333333330000001" green="0.41568627450000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ryv-Pu-fUZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3zq-28-pFE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ryv-Pu-fUZ" secondAttribute="trailing" constant="15" id="GD4-2D-FJh"/>
@@ -40,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="grub-chaser-parceiro" width="1024" height="1024"/>
+        <image name="grub-chaser-parceiro" width="1250" height="1250"/>
     </resources>
 </document>
